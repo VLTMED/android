@@ -1,0 +1,2025 @@
+{
+  "locale": "ar",
+  "strings": [
+    {
+      "key": "ui.catalog.action",
+      "english": "Action",
+      "translation": "أكشن"
+    },
+    {
+      "key": "ui.catalog.adventure",
+      "english": "Adventure",
+      "translation": "مغامرة"
+    },
+    {
+      "key": "ui.catalog.biography",
+      "english": "Biography",
+      "translation": "سيرة ذاتية"
+    },
+    {
+      "key": "ui.catalog.crime",
+      "english": "Crime",
+      "translation": "جريمة"
+    },
+    {
+      "key": "ui.catalog.drama",
+      "english": "Drama",
+      "translation": "دراما"
+    },
+    {
+      "key": "ui.catalog.fantasy",
+      "english": "Fantasy",
+      "translation": "خيال"
+    },
+    {
+      "key": "ui.catalog.history",
+      "english": "History",
+      "translation": "تاريخي"
+    },
+    {
+      "key": "ui.catalog.horror",
+      "english": "Horror",
+      "translation": "رعب"
+    },
+    {
+      "key": "ui.catalog.mystery",
+      "english": "Mystery",
+      "translation": "غموض"
+    },
+    {
+      "key": "ui.catalog.romance",
+      "english": "Romance",
+      "translation": "رومانسي"
+    },
+    {
+      "key": "ui.catalog.sci_fi",
+      "english": "Sci-Fi",
+      "translation": "خيال علمي"
+    },
+    {
+      "key": "ui.catalog.sport",
+      "english": "Sport",
+      "translation": "رياضة"
+    },
+    {
+      "key": "ui.catalog.thriller",
+      "english": "Thriller",
+      "translation": "إثارة"
+    },
+    {
+      "key": "ui.catalog.war",
+      "english": "War",
+      "translation": "حرب"
+    },
+    {
+      "key": "ui.catalog.western",
+      "english": "Western",
+      "translation": "وسترن"
+    },
+    {
+      "key": "ui.categoryactivity.fmhy_picks",
+      "english": "FMHY picks",
+      "translation": "مختارات FMHY"
+    },
+    {
+      "key": "ui.categoryactivity.long_press_a_site_for_favorites_and_mirrors",
+      "english": "Long-press a site for favorites and mirrors",
+      "translation": "اضغط مطوّلًا على أي موقع لإضافته للمفضّلة أو لعرض الروابط البديلة"
+    },
+    {
+      "key": "ui.categoryactivity.more_lists_of_sites",
+      "english": "More lists of sites",
+      "translation": "قوائم مواقع إضافية"
+    },
+    {
+      "key": "ui.categoryactivity.more_sites",
+      "english": "More sites",
+      "translation": "مواقع إضافية"
+    },
+    {
+      "key": "ui.cats.anime_streaming",
+      "english": "Anime Streaming",
+      "translation": "بث الأنمي"
+    },
+    {
+      "key": "ui.cats.cartoon_streaming",
+      "english": "Cartoon Streaming",
+      "translation": "بث الكرتون"
+    },
+    {
+      "key": "ui.cats.classics_public_domain",
+      "english": "Classics / Public Domain",
+      "translation": "كلاسيكيات / ملكية عامة"
+    },
+    {
+      "key": "ui.cats.dedicated_server",
+      "english": "Dedicated-Server",
+      "translation": "خادم مخصّص"
+    },
+    {
+      "key": "ui.cats.drama_streaming",
+      "english": "Drama Streaming",
+      "translation": "بث الدراما"
+    },
+    {
+      "key": "ui.cats.film_archives",
+      "english": "Film Archives",
+      "translation": "أرشيف الأفلام"
+    },
+    {
+      "key": "ui.cats.free_w_ads",
+      "english": "Free w/ Ads",
+      "translation": "مجاني مع إعلانات"
+    },
+    {
+      "key": "ui.cats.live_sports",
+      "english": "Live Sports",
+      "translation": "رياضة مباشرة"
+    },
+    {
+      "key": "ui.cats.multi_server",
+      "english": "Multi-Server",
+      "translation": "خوادم متعددة"
+    },
+    {
+      "key": "ui.cats.p_stream_forks",
+      "english": "P-Stream Forks",
+      "translation": "فروع P-Stream"
+    },
+    {
+      "key": "ui.cats.specialty_streaming",
+      "english": "Specialty Streaming",
+      "translation": "بث متخصّص"
+    },
+    {
+      "key": "ui.cats.sports_replays",
+      "english": "Sports Replays",
+      "translation": "إعادة المباريات"
+    },
+    {
+      "key": "ui.cats.stream_aggregators",
+      "english": "Stream Aggregators",
+      "translation": "مجمّعات بث"
+    },
+    {
+      "key": "ui.cats.stream_lounges",
+      "english": "Stream Lounges",
+      "translation": "صالات بث"
+    },
+    {
+      "key": "ui.cats.tv_streaming",
+      "english": "TV Streaming",
+      "translation": "بث القنوات"
+    },
+    {
+      "key": "ui.cats.video_streaming",
+      "english": "Video Streaming",
+      "translation": "بث الفيديو"
+    },
+    {
+      "key": "ui.fonts.black",
+      "english": "Black",
+      "translation": "أسود"
+    },
+    {
+      "key": "ui.fonts.bold",
+      "english": "Bold",
+      "translation": "عريض"
+    },
+    {
+      "key": "ui.fonts.light",
+      "english": "Light",
+      "translation": "خفيف"
+    },
+    {
+      "key": "ui.fonts.medium",
+      "english": "Medium",
+      "translation": "متوسط"
+    },
+    {
+      "key": "ui.fonts.regular",
+      "english": "Regular",
+      "translation": "عادي"
+    },
+    {
+      "key": "ui.history.movies_tv_shows_anime",
+      "english": "Movies, TV Shows & Anime",
+      "translation": "أفلام ومسلسلات وأنمي"
+    },
+    {
+      "key": "ui.home.1_on_your_phone_or_computer_open_url",
+      "english": "1. On your phone or computer, open {url}\n2. Sign in, or make a free account there\n3. Enter this code:",
+      "translation": "1. من هاتفك أو حاسوبك، افتح {url}\n2. سجّل الدخول، أو أنشئ حسابًا مجانيًا هناك\n3. أدخل هذا الرمز:"
+    },
+    {
+      "key": "ui.home.a_playlist_m3u_or_a_single_stream_link",
+      "english": "A playlist (M3U) or a single stream link (.m3u8)",
+      "translation": "قائمة تشغيل (M3U) أو رابط بث واحد (.m3u8)"
+    },
+    {
+      "key": "ui.home.ad_block",
+      "english": "Ad block",
+      "translation": "حظر الإعلانات"
+    },
+    {
+      "key": "ui.home.ad_block_off",
+      "english": "Ad block off",
+      "translation": "حظر الإعلانات: متوقف"
+    },
+    {
+      "key": "ui.home.ad_block_on",
+      "english": "Ad block on",
+      "translation": "حظر الإعلانات: مفعّل"
+    },
+    {
+      "key": "ui.home.add",
+      "english": "Add",
+      "translation": "إضافة"
+    },
+    {
+      "key": "ui.home.add_a_playlist_or_stream",
+      "english": "Add a playlist or stream",
+      "translation": "إضافة قائمة تشغيل أو بث"
+    },
+    {
+      "key": "ui.home.add_a_site",
+      "english": "+  Add a site",
+      "translation": "+  إضافة موقع"
+    },
+    {
+      "key": "ui.home.add_a_site_2",
+      "english": "Add a site",
+      "translation": "إضافة موقع"
+    },
+    {
+      "key": "ui.home.add_to_favorites",
+      "english": "★  Add to favorites",
+      "translation": "★  إضافة إلى المفضّلة"
+    },
+    {
+      "key": "ui.home.added_to_my_list",
+      "english": "Added to My list",
+      "translation": "أُضيف إلى قائمتي"
+    },
+    {
+      "key": "ui.home.added_to_the_iptv_tab",
+      "english": "Added to the IPTV tab",
+      "translation": "أُضيف إلى تبويب IPTV"
+    },
+    {
+      "key": "ui.home.adult_channels",
+      "english": "Adult channels",
+      "translation": "قنوات للبالغين"
+    },
+    {
+      "key": "ui.home.all",
+      "english": "All",
+      "translation": "الكل"
+    },
+    {
+      "key": "ui.home.all_count",
+      "english": "All  {count}  ›",
+      "translation": "الكل  {count}  ‹"
+    },
+    {
+      "key": "ui.home.all_count_2",
+      "english": "All {count}  ›",
+      "translation": "الكل {count}  ‹"
+    },
+    {
+      "key": "ui.home.already_checking",
+      "english": "Already checking",
+      "translation": "جارٍ الفحص بالفعل"
+    },
+    {
+      "key": "ui.home.anime",
+      "english": "Anime",
+      "translation": "أنمي"
+    },
+    {
+      "key": "ui.home.arrow_keys_move_a_round_cursor_hold_ok",
+      "english": "Arrow keys move a round cursor. Hold OK 5 s on a site to switch.",
+      "translation": "تُحرّك مفاتيح الأسهم المؤشر الدائري. اضغط مطوّلًا على OK لمدة 5 ثوانٍ على أي موقع للتبديل."
+    },
+    {
+      "key": "ui.home.blocks_ad_domains_pop_ups_and_redirects_on",
+      "english": "Blocks ad domains, pop-ups and redirects on every site.",
+      "translation": "يحظر نطاقات الإعلانات والنوافذ المنبثقة وإعادة التوجيه في كل موقع."
+    },
+    {
+      "key": "ui.home.can_t_reach_github",
+      "english": "Can't reach GitHub",
+      "translation": "تعذّر الوصول إلى GitHub"
+    },
+    {
+      "key": "ui.home.can_t_reach_github_check_warp",
+      "english": "Can't reach GitHub. Check WARP.",
+      "translation": "تعذّر الوصول إلى GitHub. تحقّق من WARP."
+    },
+    {
+      "key": "ui.home.can_t_reach_simkl_check_warp_and_try",
+      "english": "Can't reach Simkl. Check WARP and try again.",
+      "translation": "تعذّر الوصول إلى Simkl. تحقّق من WARP وحاول مرة أخرى."
+    },
+    {
+      "key": "ui.home.can_t_reach_the_catalog_check_warp",
+      "english": "Can't reach the catalog. Check WARP.",
+      "translation": "تعذّر الوصول إلى الفهرس. تحقّق من WARP."
+    },
+    {
+      "key": "ui.home.can_t_reach_the_catalog_tap_to_retry",
+      "english": "Can't reach the catalog. Tap to retry",
+      "translation": "تعذّر الوصول إلى الفهرس. اضغط لإعادة المحاولة"
+    },
+    {
+      "key": "ui.home.can_t_reach_the_list",
+      "english": "Can't reach the list",
+      "translation": "تعذّر الوصول إلى القائمة"
+    },
+    {
+      "key": "ui.home.cancel",
+      "english": "Cancel",
+      "translation": "إلغاء"
+    },
+    {
+      "key": "ui.home.categories",
+      "english": "Categories",
+      "translation": "الفئات"
+    },
+    {
+      "key": "ui.home.channels_added_to_the_iptv_tab",
+      "english": "Channels added to the IPTV tab",
+      "translation": "أُضيفت القنوات إلى تبويب IPTV"
+    },
+    {
+      "key": "ui.home.channels_that_failed_a_check_or_would_not",
+      "english": "Channels that failed a check or would not play stay out of the lists.",
+      "translation": "القنوات التي يفشل فحصها أو يتعذّر تشغيلها تبقى خارج القوائم."
+    },
+    {
+      "key": "ui.home.channels_updated",
+      "english": "Channels updated",
+      "translation": "تم تحديث القنوات"
+    },
+    {
+      "key": "ui.home.check_at_app_start",
+      "english": "Check at app start",
+      "translation": "الفحص عند بدء التطبيق"
+    },
+    {
+      "key": "ui.home.check_channels_now",
+      "english": "Check channels now",
+      "translation": "فحص القنوات الآن"
+    },
+    {
+      "key": "ui.home.check_for_updates",
+      "english": "Check for updates",
+      "translation": "التحقق من التحديثات"
+    },
+    {
+      "key": "ui.home.checking_channels_in_the_background",
+      "english": "Checking channels in the background…",
+      "translation": "جارٍ فحص القنوات في الخلفية…"
+    },
+    {
+      "key": "ui.home.checking_done_of_total",
+      "english": "Checking: {done} of {total}",
+      "translation": "جارٍ الفحص: {done} من {total}"
+    },
+    {
+      "key": "ui.home.checking_fmhy",
+      "english": "Checking FMHY…",
+      "translation": "جارٍ فحص FMHY…"
+    },
+    {
+      "key": "ui.home.checks_fmhy_for_new_and_removed_sites_also",
+      "english": "Checks FMHY for new and removed sites (also every 12 hours).",
+      "translation": "يتحقق من FMHY لرصد المواقع الجديدة والمحذوفة (كل 12 ساعة أيضًا)."
+    },
+    {
+      "key": "ui.home.clear",
+      "english": "Clear",
+      "translation": "مسح"
+    },
+    {
+      "key": "ui.home.clear_all",
+      "english": "Clear all",
+      "translation": "مسح الكل"
+    },
+    {
+      "key": "ui.home.clear_all_favorites",
+      "english": "Clear all favorites",
+      "translation": "مسح كل المفضّلة"
+    },
+    {
+      "key": "ui.home.clear_all_favorites_2",
+      "english": "Clear all favorites?",
+      "translation": "مسح كل المفضّلة؟"
+    },
+    {
+      "key": "ui.home.clear_favorites",
+      "english": "Clear favorites",
+      "translation": "مسح المفضّلة"
+    },
+    {
+      "key": "ui.home.clear_iptv_history",
+      "english": "Clear IPTV history",
+      "translation": "مسح سجل IPTV"
+    },
+    {
+      "key": "ui.home.clear_iptv_history_2",
+      "english": "Clear IPTV history?",
+      "translation": "مسح سجل IPTV؟"
+    },
+    {
+      "key": "ui.home.clear_my_list",
+      "english": "Clear My list",
+      "translation": "مسح قائمتي"
+    },
+    {
+      "key": "ui.home.clear_my_list_2",
+      "english": "Clear My list?",
+      "translation": "مسح قائمتي؟"
+    },
+    {
+      "key": "ui.home.clear_watch_history",
+      "english": "Clear watch history",
+      "translation": "مسح سجل المشاهدة"
+    },
+    {
+      "key": "ui.home.clear_watch_history_2",
+      "english": "Clear watch history?",
+      "translation": "مسح سجل المشاهدة؟"
+    },
+    {
+      "key": "ui.home.cloudflare_tunnel_only_inside_this_app_gets_past",
+      "english": "Cloudflare tunnel, only inside this app. Gets past ISP and DNS blocks.",
+      "translation": "نفق Cloudflare، يعمل داخل هذا التطبيق فقط. يتجاوز حظر مزوّد الإنترنت وDNS."
+    },
+    {
+      "key": "ui.home.connect",
+      "english": "Connect",
+      "translation": "اتصال"
+    },
+    {
+      "key": "ui.home.connect_simkl",
+      "english": "Connect Simkl",
+      "translation": "ربط حساب Simkl"
+    },
+    {
+      "key": "ui.home.connected",
+      "english": "Connected",
+      "translation": "متصل"
+    },
+    {
+      "key": "ui.home.connecting",
+      "english": "connecting…",
+      "translation": "جارٍ الاتصال…"
+    },
+    {
+      "key": "ui.home.connection",
+      "english": "Connection",
+      "translation": "الاتصال"
+    },
+    {
+      "key": "ui.home.continue_watching",
+      "english": "Continue watching",
+      "translation": "متابعة المشاهدة"
+    },
+    {
+      "key": "ui.home.count_channel.one",
+      "english": "{count} channel",
+      "translation": "{count} قناة"
+    },
+    {
+      "key": "ui.home.count_channel_in_iptv_continue_watching.one",
+      "english": "{count} channel in IPTV Continue watching",
+      "translation": "{count} قناة في متابعة المشاهدة لـ IPTV"
+    },
+    {
+      "key": "ui.home.count_channel_press_to_remove.one",
+      "english": "{count} channel. Press to remove.",
+      "translation": "{count} قناة. اضغط للإزالة."
+    },
+    {
+      "key": "ui.home.count_channels.many",
+      "english": "{count} channels",
+      "translation": "{count} قنوات"
+    },
+    {
+      "key": "ui.home.count_channels_in_iptv_continue_watching.many",
+      "english": "{count} channels in IPTV Continue watching",
+      "translation": "{count} قنوات في متابعة المشاهدة لـ IPTV"
+    },
+    {
+      "key": "ui.home.count_channels_press_to_remove.many",
+      "english": "{count} channels. Press to remove.",
+      "translation": "{count} قنوات. اضغط للإزالة."
+    },
+    {
+      "key": "ui.home.count_offline_right_now_re_tests_every_channel",
+      "english": "{count} offline right now. Re-tests every channel from scratch.",
+      "translation": "{count} غير متصل حاليًا. يُعاد فحص كل قناة من جديد."
+    },
+    {
+      "key": "ui.home.count_site.one",
+      "english": "{count} site",
+      "translation": "{count} موقع"
+    },
+    {
+      "key": "ui.home.count_sites.many",
+      "english": "{count} sites",
+      "translation": "{count} مواقع"
+    },
+    {
+      "key": "ui.home.count_title_in_continue_watching.one",
+      "english": "{count} title in Continue watching",
+      "translation": "{count} عنوان في متابعة المشاهدة"
+    },
+    {
+      "key": "ui.home.count_titles_in_continue_watching.many",
+      "english": "{count} titles in Continue watching",
+      "translation": "{count} عناوين في متابعة المشاهدة"
+    },
+    {
+      "key": "ui.home.countries",
+      "english": "Countries",
+      "translation": "الدول"
+    },
+    {
+      "key": "ui.home.cursor_on_sites",
+      "english": "Cursor on sites",
+      "translation": "المؤشر على المواقع"
+    },
+    {
+      "key": "ui.home.custom",
+      "english": "Custom",
+      "translation": "مخصص"
+    },
+    {
+      "key": "ui.home.default",
+      "english": "Default",
+      "translation": "افتراضي"
+    },
+    {
+      "key": "ui.home.disconnect",
+      "english": "Disconnect",
+      "translation": "قطع الاتصال"
+    },
+    {
+      "key": "ui.home.disconnect_simkl",
+      "english": "Disconnect Simkl?",
+      "translation": "قطع الاتصال بـ Simkl؟"
+    },
+    {
+      "key": "ui.home.download_it_and_install_over_this_version",
+      "english": "Download it and install over this version?",
+      "translation": "تنزيله وتثبيته فوق هذا الإصدار؟"
+    },
+    {
+      "key": "ui.home.downloading_channels",
+      "english": "Downloading channels…",
+      "translation": "جارٍ تنزيل القنوات…"
+    },
+    {
+      "key": "ui.home.downloading_playlist",
+      "english": "Downloading playlist…",
+      "translation": "جارٍ تنزيل قائمة التشغيل…"
+    },
+    {
+      "key": "ui.home.downloads_the_newest_playlists_from_github_also_at",
+      "english": "Downloads the newest playlists from GitHub (also at app start, every 12 hours).",
+      "translation": "يُنزّل أحدث قوائم التشغيل من GitHub (أيضًا عند بدء التطبيق، وكل 12 ساعة)."
+    },
+    {
+      "key": "ui.home.empties_continue_watching",
+      "english": "Empties Continue watching.",
+      "translation": "يُفرغ متابعة المشاهدة."
+    },
+    {
+      "key": "ui.home.empties_continue_watching_on_the_iptv_tab",
+      "english": "Empties Continue watching on the IPTV tab.",
+      "translation": "يُفرغ متابعة المشاهدة في تبويب IPTV."
+    },
+    {
+      "key": "ui.home.extra_source_list",
+      "english": "Extra source list",
+      "translation": "قائمة مصادر إضافية"
+    },
+    {
+      "key": "ui.home.failed_tap_to_retry",
+      "english": "failed, tap to retry",
+      "translation": "فشل، اضغط لإعادة المحاولة"
+    },
+    {
+      "key": "ui.home.favorites",
+      "english": "★  Favorites",
+      "translation": "★  المفضّلة"
+    },
+    {
+      "key": "ui.home.favorites_2",
+      "english": "Favorites",
+      "translation": "المفضّلة"
+    },
+    {
+      "key": "ui.home.favorites_cleared",
+      "english": "Favorites cleared",
+      "translation": "تم مسح المفضّلة"
+    },
+    {
+      "key": "ui.home.fetching",
+      "english": "Fetching…",
+      "translation": "جارٍ الجلب…"
+    },
+    {
+      "key": "ui.home.fmhyplay_stops_telling_simkl_what_you_watch_your",
+      "english": "FMHYPlay stops telling Simkl what you watch. Your Simkl history stays.",
+      "translation": "سيتوقف FMHYPlay عن إخبار Simkl بما تشاهده. يبقى سجلّك في Simkl كما هو."
+    },
+    {
+      "key": "ui.home.fmhyplay_version_asks_github_for_a_newer_release",
+      "english": "FMHYPlay {version}. Asks GitHub for a newer release and installs it on your say.",
+      "translation": "FMHYPlay {version}. يسأل GitHub عن إصدار أحدث ويثبّته بموافقتك."
+    },
+    {
+      "key": "ui.home.fmhyplay_version_build_site_lists_from_fmhy_titles",
+      "english": "FMHYPlay {version}  ·  {build}\nSite lists from FMHY. Titles and posters from Cinemeta.",
+      "translation": "FMHYPlay {version}  ·  {build}\nقوائم المواقع من FMHY. العناوين والملصقات من Cinemeta."
+    },
+    {
+      "key": "ui.home.fmhyplay_version_is_the_latest",
+      "english": "FMHYPlay {version} is the latest",
+      "translation": "FMHYPlay {version} هو الأحدث"
+    },
+    {
+      "key": "ui.home.getting_a_code",
+      "english": "Getting a code…",
+      "translation": "جارٍ الحصول على رمز…"
+    },
+    {
+      "key": "ui.home.hide_offline_channels",
+      "english": "Hide offline channels",
+      "translation": "إخفاء القنوات غير المتصلة"
+    },
+    {
+      "key": "ui.home.history_cleared",
+      "english": "History cleared",
+      "translation": "تم مسح السجل"
+    },
+    {
+      "key": "ui.home.hold_ok_on_a_channel_to_remove_it",
+      "english": "Hold OK on a channel to remove it or add it to favorites",
+      "translation": "اضغط مطوّلًا على OK على أي قناة لإزالتها أو إضافتها إلى المفضّلة"
+    },
+    {
+      "key": "ui.home.hold_ok_on_a_site_for_favorites_and",
+      "english": "Hold OK on a site for favorites and mirrors",
+      "translation": "اضغط مطوّلًا على OK على أي موقع للمفضّلة والروابط البديلة"
+    },
+    {
+      "key": "ui.home.home",
+      "english": "Home",
+      "translation": "الرئيسية"
+    },
+    {
+      "key": "ui.home.install",
+      "english": "Install",
+      "translation": "تثبيت"
+    },
+    {
+      "key": "ui.home.iptv",
+      "english": "IPTV",
+      "translation": "IPTV"
+    },
+    {
+      "key": "ui.home.iptv_history_cleared",
+      "english": "IPTV history cleared",
+      "translation": "تم مسح سجل IPTV"
+    },
+    {
+      "key": "ui.home.later",
+      "english": "Later",
+      "translation": "لاحقًا"
+    },
+    {
+      "key": "ui.home.link_to_a_text_file_one_label_url",
+      "english": "Link to a text file, one \"label|url\" line per playlist. Empty means none.",
+      "translation": "رابط لملف نصي، سطر واحد بصيغة \"التسمية|الرابط\" لكل قائمة تشغيل. اتركه فارغًا لعدم الإضافة."
+    },
+    {
+      "key": "ui.home.live_tv_count",
+      "english": "Live TV  ·  {count}",
+      "translation": "تلفاز مباشر  ·  {count}"
+    },
+    {
+      "key": "ui.home.load_more",
+      "english": "Load more",
+      "translation": "تحميل المزيد"
+    },
+    {
+      "key": "ui.home.loading",
+      "english": "Loading…",
+      "translation": "جارٍ التحميل…"
+    },
+    {
+      "key": "ui.home.loading_channels",
+      "english": "Loading channels…",
+      "translation": "جارٍ تحميل القنوات…"
+    },
+    {
+      "key": "ui.home.looks_for_an_update_once_every_12_hours",
+      "english": "Looks for an update once every 12 hours.",
+      "translation": "يبحث عن تحديث مرة كل 12 ساعة."
+    },
+    {
+      "key": "ui.home.marks_movies_and_episodes_you_watch_in_the",
+      "english": "Marks movies and episodes you watch in the player as watched on Simkl, a free tracker. Titles opened from Movies, TV or Anime.",
+      "translation": "يُسجّل الأفلام والحلقات التي تشاهدها في المشغّل كمُشاهَدة على Simkl، وهو متتبّع مجاني. يشمل العناوين المفتوحة من الأفلام أو المسلسلات أو الأنمي."
+    },
+    {
+      "key": "ui.home.more",
+      "english": "More  ›",
+      "translation": "المزيد  ‹"
+    },
+    {
+      "key": "ui.home.more_playlists_and_title_links_from_a_text",
+      "english": "More playlists and title links, from a text file you choose (it starts on the project's own list).",
+      "translation": "قوائم تشغيل وروابط عناوين إضافية، من ملف نصي تختاره (تبدأ بقائمة المشروع نفسها)."
+    },
+    {
+      "key": "ui.home.movies",
+      "english": "Movies",
+      "translation": "الأفلام"
+    },
+    {
+      "key": "ui.home.my_list",
+      "english": "My list",
+      "translation": "قائمتي"
+    },
+    {
+      "key": "ui.home.my_list_cleared",
+      "english": "My list cleared",
+      "translation": "تم مسح قائمتي"
+    },
+    {
+      "key": "ui.home.my_streams",
+      "english": "My streams",
+      "translation": "البث الخاص بي"
+    },
+    {
+      "key": "ui.home.name_e_g_sports_shown_as_its_row",
+      "english": "Name, e.g. Sports (shown as its row)",
+      "translation": "الاسم، مثل: رياضة (يظهر كعنوان الصف)"
+    },
+    {
+      "key": "ui.home.no_channels_yet_check_warp_then_settings_refresh",
+      "english": "No channels yet. Check WARP, then Settings, Refresh IPTV channels.",
+      "translation": "لا توجد قنوات بعد. تحقّق من WARP، ثم من الإعدادات، تحديث قنوات IPTV."
+    },
+    {
+      "key": "ui.home.no_voice_input_on_this_device",
+      "english": "No voice input on this device",
+      "translation": "لا يتوفر إدخال صوتي على هذا الجهاز"
+    },
+    {
+      "key": "ui.home.none",
+      "english": "None",
+      "translation": "بدون"
+    },
+    {
+      "key": "ui.home.nothing_here",
+      "english": "Nothing here",
+      "translation": "لا يوجد شيء هنا"
+    },
+    {
+      "key": "ui.home.off",
+      "english": "Off",
+      "translation": "إيقاف"
+    },
+    {
+      "key": "ui.home.on",
+      "english": "On",
+      "translation": "تشغيل"
+    },
+    {
+      "key": "ui.home.open_mirror_host",
+      "english": "Open mirror: {host}",
+      "translation": "فتح الرابط البديل: {host}"
+    },
+    {
+      "key": "ui.home.open_site_home",
+      "english": "Open {site} home",
+      "translation": "فتح الصفحة الرئيسية لـ {site}"
+    },
+    {
+      "key": "ui.home.other_languages",
+      "english": "Other languages",
+      "translation": "لغات أخرى"
+    },
+    {
+      "key": "ui.home.password",
+      "english": "Password",
+      "translation": "كلمة المرور"
+    },
+    {
+      "key": "ui.home.paste_a_playlist_or_a_single_stream_link",
+      "english": "Paste a playlist or a single stream link (.m3u8), or sign in with Xtream. Each playlist gets its own row on the IPTV tab.",
+      "translation": "ألصق قائمة تشغيل أو رابط بث واحد (.m3u8)، أو سجّل الدخول عبر Xtream. تحصل كل قائمة تشغيل على صفّها الخاص في تبويب IPTV."
+    },
+    {
+      "key": "ui.home.player",
+      "english": "Player",
+      "translation": "المشغّل"
+    },
+    {
+      "key": "ui.home.playlist",
+      "english": "+  Playlist",
+      "translation": "+  قائمة تشغيل"
+    },
+    {
+      "key": "ui.home.playlist_removed",
+      "english": "Playlist removed",
+      "translation": "تمت إزالة قائمة التشغيل"
+    },
+    {
+      "key": "ui.home.popular",
+      "english": "Popular",
+      "translation": "الأكثر شيوعًا"
+    },
+    {
+      "key": "ui.home.popular_genre",
+      "english": "Popular {genre}",
+      "translation": "{genre} الأكثر شيوعًا"
+    },
+    {
+      "key": "ui.home.refresh_fmhy_lists",
+      "english": "Refresh FMHY lists",
+      "translation": "تحديث قوائم FMHY"
+    },
+    {
+      "key": "ui.home.refresh_iptv_channels",
+      "english": "Refresh IPTV channels",
+      "translation": "تحديث قنوات IPTV"
+    },
+    {
+      "key": "ui.home.remove",
+      "english": "Remove",
+      "translation": "إزالة"
+    },
+    {
+      "key": "ui.home.remove_from_continue_watching",
+      "english": "Remove from Continue watching",
+      "translation": "إزالة من متابعة المشاهدة"
+    },
+    {
+      "key": "ui.home.remove_from_favorites",
+      "english": "☆  Remove from favorites",
+      "translation": "☆  إزالة من المفضّلة"
+    },
+    {
+      "key": "ui.home.remove_from_working",
+      "english": "Remove from Working",
+      "translation": "إزالة من القنوات العاملة"
+    },
+    {
+      "key": "ui.home.remove_this_playlist",
+      "english": "Remove this playlist?",
+      "translation": "إزالة قائمة التشغيل هذه؟"
+    },
+    {
+      "key": "ui.home.removed_from_my_list",
+      "english": "Removed from My list",
+      "translation": "أُزيل من قائمتي"
+    },
+    {
+      "key": "ui.home.removes_all_count_titles_you_saved",
+      "english": "Removes all {count} titles you saved.",
+      "translation": "يزيل كل العناوين الـ{count} التي حفظتها."
+    },
+    {
+      "key": "ui.home.removes_count_site_from_favorites_including_sites_you.one",
+      "english": "Removes {count} site from Favorites, including sites you added yourself. FMHY's own lists stay.",
+      "translation": "يزيل {count} موقع من المفضّلة، بما في ذلك المواقع التي أضفتها بنفسك. تبقى قوائم FMHY الأصلية كما هي."
+    },
+    {
+      "key": "ui.home.removes_count_sites_from_favorites_including_sites_you.many",
+      "english": "Removes {count} sites from Favorites, including sites you added yourself. FMHY's own lists stay.",
+      "translation": "يزيل {count} مواقع من المفضّلة، بما في ذلك المواقع التي أضفتها بنفسك. تبقى قوائم FMHY الأصلية كما هي."
+    },
+    {
+      "key": "ui.home.save",
+      "english": "Save",
+      "translation": "حفظ"
+    },
+    {
+      "key": "ui.home.say_a_title_site_or_channel",
+      "english": "Say a title, site or channel",
+      "translation": "قل اسم عنوان أو موقع أو قناة"
+    },
+    {
+      "key": "ui.home.search",
+      "english": "Search",
+      "translation": "بحث"
+    },
+    {
+      "key": "ui.home.settings",
+      "english": "Settings",
+      "translation": "الإعدادات"
+    },
+    {
+      "key": "ui.home.shows_the_mature_category_on_the_iptv_tab",
+      "english": "Shows the Mature category on the IPTV tab. Off by default.",
+      "translation": "يعرض فئة \"للبالغين\" في تبويب IPTV. مُعطّل افتراضيًا."
+    },
+    {
+      "key": "ui.home.signing_in",
+      "english": "Signing in…",
+      "translation": "جارٍ تسجيل الدخول…"
+    },
+    {
+      "key": "ui.home.simkl",
+      "english": "Simkl",
+      "translation": "Simkl"
+    },
+    {
+      "key": "ui.home.simkl_connected",
+      "english": "Simkl connected",
+      "translation": "تم ربط Simkl"
+    },
+    {
+      "key": "ui.home.simkl_turned_this_down_close_this_and_try",
+      "english": "Simkl turned this down. Close this and try again.",
+      "translation": "رفض Simkl هذا الطلب. أغلق هذه النافذة وحاول مرة أخرى."
+    },
+    {
+      "key": "ui.home.site_list_is_up_to_date",
+      "english": "Site list is up to date",
+      "translation": "قائمة المواقع محدَّثة"
+    },
+    {
+      "key": "ui.home.site_list_updated",
+      "english": "Site list updated",
+      "translation": "تم تحديث قائمة المواقع"
+    },
+    {
+      "key": "ui.home.sites",
+      "english": "Sites",
+      "translation": "المواقع"
+    },
+    {
+      "key": "ui.home.size_and_position_of_subtitles_in_the_player",
+      "english": "Size and position of subtitles in the player. Timing is on the player's Subtitles button.",
+      "translation": "حجم الترجمة وموضعها في المشغّل. التوقيت متاح من زر الترجمة في المشغّل."
+    },
+    {
+      "key": "ui.home.source_list_updated",
+      "english": "Source list updated",
+      "translation": "تم تحديث قائمة المصادر"
+    },
+    {
+      "key": "ui.home.sports",
+      "english": "Sports",
+      "translation": "الرياضة"
+    },
+    {
+      "key": "ui.home.sports_sites_count",
+      "english": "Sports sites  ·  {count}",
+      "translation": "مواقع رياضية  ·  {count}"
+    },
+    {
+      "key": "ui.home.the_code_ran_out_close_this_and_press",
+      "english": "The code ran out. Close this and press Simkl again for a new one.",
+      "translation": "انتهت صلاحية الرمز. أغلق هذه النافذة واضغط على Simkl مرة أخرى للحصول على رمز جديد."
+    },
+    {
+      "key": "ui.home.the_server_username_and_password_from_your_iptv",
+      "english": "The server, username and password from your IPTV provider",
+      "translation": "الخادم واسم المستخدم وكلمة المرور من مزوّد IPTV الخاص بك"
+    },
+    {
+      "key": "ui.home.title_count",
+      "english": "{title}  ·  {count}",
+      "translation": "{title}  ·  {count}"
+    },
+    {
+      "key": "ui.home.tv",
+      "english": "TV",
+      "translation": "المسلسلات"
+    },
+    {
+      "key": "ui.home.up_to_date",
+      "english": "Up to date",
+      "translation": "محدَّث"
+    },
+    {
+      "key": "ui.home.update_version_is_available",
+      "english": "Update {version} is available",
+      "translation": "يتوفر التحديث {version}"
+    },
+    {
+      "key": "ui.home.updates",
+      "english": "Updates",
+      "translation": "التحديثات"
+    },
+    {
+      "key": "ui.home.username",
+      "english": "Username",
+      "translation": "اسم المستخدم"
+    },
+    {
+      "key": "ui.home.version_available",
+      "english": "{version} available",
+      "translation": "{version} متاح"
+    },
+    {
+      "key": "ui.home.voice_search",
+      "english": "Voice search",
+      "translation": "البحث الصوتي"
+    },
+    {
+      "key": "ui.home.warp",
+      "english": "WARP",
+      "translation": "WARP"
+    },
+    {
+      "key": "ui.home.warp_status",
+      "english": "WARP {status}",
+      "translation": "WARP {status}"
+    },
+    {
+      "key": "ui.home.working_channels",
+      "english": "Working channels",
+      "translation": "القنوات العاملة"
+    },
+    {
+      "key": "ui.home.working_count",
+      "english": "Working  ·  {count}",
+      "translation": "العاملة  ·  {count}"
+    },
+    {
+      "key": "ui.home.xtream_login",
+      "english": "Xtream login",
+      "translation": "تسجيل الدخول عبر Xtream"
+    },
+    {
+      "key": "ui.home.your_data",
+      "english": "Your data",
+      "translation": "بياناتك"
+    },
+    {
+      "key": "ui.iptv.already_added",
+      "english": "Already added",
+      "translation": "مُضاف مسبقًا"
+    },
+    {
+      "key": "ui.iptv.animation",
+      "english": "Animation",
+      "translation": "رسوم متحركة"
+    },
+    {
+      "key": "ui.iptv.business",
+      "english": "Business",
+      "translation": "أعمال"
+    },
+    {
+      "key": "ui.iptv.can_t_sign_in_check_the_server_username",
+      "english": "Can't sign in: check the server, username and password",
+      "translation": "تعذّر تسجيل الدخول: تحقّق من الخادم واسم المستخدم وكلمة المرور"
+    },
+    {
+      "key": "ui.iptv.checking_channels_done_of_total_tested_offline_ones",
+      "english": "Checking channels… {done} of {total} tested, offline ones are hidden",
+      "translation": "جارٍ فحص القنوات… تم اختبار {done} من {total}، وتُخفى غير المتصلة"
+    },
+    {
+      "key": "ui.iptv.classic",
+      "english": "Classic",
+      "translation": "كلاسيكي"
+    },
+    {
+      "key": "ui.iptv.comedy",
+      "english": "Comedy",
+      "translation": "كوميدي"
+    },
+    {
+      "key": "ui.iptv.cooking",
+      "english": "Cooking",
+      "translation": "طبخ"
+    },
+    {
+      "key": "ui.iptv.count_offline_channels_hidden",
+      "english": "{count} offline channels hidden",
+      "translation": "{count} قناة غير متصلة مخفية"
+    },
+    {
+      "key": "ui.iptv.culture",
+      "english": "Culture",
+      "translation": "ثقافة"
+    },
+    {
+      "key": "ui.iptv.documentary",
+      "english": "Documentary",
+      "translation": "وثائقي"
+    },
+    {
+      "key": "ui.iptv.education",
+      "english": "Education",
+      "translation": "تعليم"
+    },
+    {
+      "key": "ui.iptv.entertainment",
+      "english": "Entertainment",
+      "translation": "ترفيه"
+    },
+    {
+      "key": "ui.iptv.family",
+      "english": "Family",
+      "translation": "عائلي"
+    },
+    {
+      "key": "ui.iptv.general",
+      "english": "General",
+      "translation": "عام"
+    },
+    {
+      "key": "ui.iptv.interactive",
+      "english": "Interactive",
+      "translation": "تفاعلي"
+    },
+    {
+      "key": "ui.iptv.kids",
+      "english": "Kids",
+      "translation": "أطفال"
+    },
+    {
+      "key": "ui.iptv.legislative",
+      "english": "Legislative",
+      "translation": "تشريعي"
+    },
+    {
+      "key": "ui.iptv.lifestyle",
+      "english": "Lifestyle",
+      "translation": "أسلوب حياة"
+    },
+    {
+      "key": "ui.iptv.mature",
+      "english": "Mature",
+      "translation": "للبالغين"
+    },
+    {
+      "key": "ui.iptv.music",
+      "english": "Music",
+      "translation": "موسيقى"
+    },
+    {
+      "key": "ui.iptv.my_playlists",
+      "english": "My playlists",
+      "translation": "قوائم تشغيلي"
+    },
+    {
+      "key": "ui.iptv.news",
+      "english": "News",
+      "translation": "أخبار"
+    },
+    {
+      "key": "ui.iptv.no_channels_in_that_playlist",
+      "english": "No channels in that playlist",
+      "translation": "لا توجد قنوات في قائمة التشغيل هذه"
+    },
+    {
+      "key": "ui.iptv.not_a_playlist_or_stream_link_or_it",
+      "english": "Not a playlist or stream link, or it can't be reached",
+      "translation": "ليس رابط قائمة تشغيل أو بث، أو يتعذّر الوصول إليه"
+    },
+    {
+      "key": "ui.iptv.other",
+      "english": "Other",
+      "translation": "أخرى"
+    },
+    {
+      "key": "ui.iptv.outdoor",
+      "english": "Outdoor",
+      "translation": "أنشطة خارجية"
+    },
+    {
+      "key": "ui.iptv.public",
+      "english": "Public",
+      "translation": "عمومي"
+    },
+    {
+      "key": "ui.iptv.relax",
+      "english": "Relax",
+      "translation": "استرخاء"
+    },
+    {
+      "key": "ui.iptv.religious",
+      "english": "Religious",
+      "translation": "ديني"
+    },
+    {
+      "key": "ui.iptv.science",
+      "english": "Science",
+      "translation": "علوم"
+    },
+    {
+      "key": "ui.iptv.series",
+      "english": "Series",
+      "translation": "مسلسلات"
+    },
+    {
+      "key": "ui.iptv.shop",
+      "english": "Shop",
+      "translation": "تسوق"
+    },
+    {
+      "key": "ui.iptv.stream_number",
+      "english": "Stream {number}",
+      "translation": "بث {number}"
+    },
+    {
+      "key": "ui.iptv.travel",
+      "english": "Travel",
+      "translation": "سفر"
+    },
+    {
+      "key": "ui.iptv.weather",
+      "english": "Weather",
+      "translation": "طقس"
+    },
+    {
+      "key": "ui.iptvactivity.count_channel_ok_plays_hold_ok_to_star.one",
+      "english": "{count} channel  ·  OK plays, hold OK to star",
+      "translation": "{count} قناة  ·  OK للتشغيل، اضغط مطوّلًا على OK للتفضيل"
+    },
+    {
+      "key": "ui.iptvactivity.count_channel_tap_plays_long_press_stars.one",
+      "english": "{count} channel  ·  tap plays, long-press stars",
+      "translation": "{count} قناة  ·  اضغط للتشغيل، اضغط مطوّلًا للتفضيل"
+    },
+    {
+      "key": "ui.iptvactivity.count_channels_ok_plays_hold_ok_to_star.many",
+      "english": "{count} channels  ·  OK plays, hold OK to star",
+      "translation": "{count} قنوات  ·  OK للتشغيل، اضغط مطوّلًا على OK للتفضيل"
+    },
+    {
+      "key": "ui.iptvactivity.count_channels_tap_plays_long_press_stars.many",
+      "english": "{count} channels  ·  tap plays, long-press stars",
+      "translation": "{count} قنوات  ·  اضغط للتشغيل، اضغط مطوّلًا للتفضيل"
+    },
+    {
+      "key": "ui.iptvactivity.filter_by_name",
+      "english": "Filter by name",
+      "translation": "تصفية حسب الاسم"
+    },
+    {
+      "key": "ui.iptvactivity.starred_name",
+      "english": "Starred {name}",
+      "translation": "تم تفضيل {name}"
+    },
+    {
+      "key": "ui.iptvactivity.unstarred_name",
+      "english": "Unstarred {name}",
+      "translation": "تم إلغاء تفضيل {name}"
+    },
+    {
+      "key": "ui.playeractivity.16_9",
+      "english": "16:9",
+      "translation": "16:9"
+    },
+    {
+      "key": "ui.playeractivity.4_3",
+      "english": "4:3",
+      "translation": "4:3"
+    },
+    {
+      "key": "ui.playeractivity.4k",
+      "english": "4K",
+      "translation": "4K"
+    },
+    {
+      "key": "ui.playeractivity.aa_size_position_timing_size_position_timing",
+      "english": "Aa  Size, position, timing  ({size} · {position} · {timing})",
+      "translation": "Aa  الحجم، الموضع، التوقيت  ({size} · {position} · {timing})"
+    },
+    {
+      "key": "ui.playeractivity.audio",
+      "english": "Audio",
+      "translation": "الصوت"
+    },
+    {
+      "key": "ui.playeractivity.audio_value",
+      "english": "Audio · {value}",
+      "translation": "الصوت · {value}"
+    },
+    {
+      "key": "ui.playeractivity.auto",
+      "english": "Auto",
+      "translation": "تلقائي"
+    },
+    {
+      "key": "ui.playeractivity.can_t_find_this_title_on_opensubtitles",
+      "english": "Can't find this title on OpenSubtitles",
+      "translation": "تعذّر العثور على هذا العنوان في OpenSubtitles"
+    },
+    {
+      "key": "ui.playeractivity.code",
+      "english": "{code}",
+      "translation": "{code}"
+    },
+    {
+      "key": "ui.playeractivity.fill",
+      "english": "Fill",
+      "translation": "ملء"
+    },
+    {
+      "key": "ui.playeractivity.fit",
+      "english": "Fit",
+      "translation": "احتواء"
+    },
+    {
+      "key": "ui.playeractivity.height_p",
+      "english": "{height}p",
+      "translation": "{height}p"
+    },
+    {
+      "key": "ui.playeractivity.language_pick_a_release_that_matches_your_video",
+      "english": "{language}: pick a release that matches your video",
+      "translation": "{language}: اختر نسخة تطابق الفيديو لديك"
+    },
+    {
+      "key": "ui.playeractivity.live",
+      "english": "LIVE",
+      "translation": "مباشر"
+    },
+    {
+      "key": "ui.playeractivity.no_name_in_this_video",
+      "english": "No {name} in this video",
+      "translation": "لا يوجد {name} في هذا الفيديو"
+    },
+    {
+      "key": "ui.playeractivity.no_name_list_found_on_this_page",
+      "english": "No {name} list found on this page",
+      "translation": "لم يتم العثور على قائمة {name} في هذه الصفحة"
+    },
+    {
+      "key": "ui.playeractivity.no_subtitles_for_this_title",
+      "english": "No subtitles for this title",
+      "translation": "لا تتوفر ترجمة لهذا العنوان"
+    },
+    {
+      "key": "ui.playeractivity.open_the_episode_on_the_site_first",
+      "english": "Open the episode on the site first",
+      "translation": "افتح الحلقة في الموقع أولًا"
+    },
+    {
+      "key": "ui.playeractivity.quality",
+      "english": "Quality",
+      "translation": "الجودة"
+    },
+    {
+      "key": "ui.playeractivity.quality_value",
+      "english": "Quality · {value}",
+      "translation": "الجودة · {value}"
+    },
+    {
+      "key": "ui.playeractivity.rate_x",
+      "english": "{rate}x",
+      "translation": "{rate}x"
+    },
+    {
+      "key": "ui.playeractivity.search_opensubtitles",
+      "english": "🔍  Search OpenSubtitles…",
+      "translation": "🔍  البحث في OpenSubtitles…"
+    },
+    {
+      "key": "ui.playeractivity.searching_opensubtitles",
+      "english": "Searching OpenSubtitles…",
+      "translation": "جارٍ البحث في OpenSubtitles…"
+    },
+    {
+      "key": "ui.playeractivity.season_season_episode_episode",
+      "english": "Season {season}  ·  Episode {episode}",
+      "translation": "الموسم {season}  ·  الحلقة {episode}"
+    },
+    {
+      "key": "ui.playeractivity.servers",
+      "english": "Servers",
+      "translation": "الخوادم"
+    },
+    {
+      "key": "ui.playeractivity.servers_current",
+      "english": "Servers · {current}",
+      "translation": "الخوادم · {current}"
+    },
+    {
+      "key": "ui.playeractivity.speed",
+      "english": "Speed",
+      "translation": "السرعة"
+    },
+    {
+      "key": "ui.playeractivity.speed_value",
+      "english": "Speed · {value}",
+      "translation": "السرعة · {value}"
+    },
+    {
+      "key": "ui.playeractivity.stretch",
+      "english": "Stretch",
+      "translation": "تمديد"
+    },
+    {
+      "key": "ui.playeractivity.subtitle_language",
+      "english": "Subtitle language",
+      "translation": "لغة الترجمة"
+    },
+    {
+      "key": "ui.playeractivity.subtitles",
+      "english": "Subtitles",
+      "translation": "الترجمة"
+    },
+    {
+      "key": "ui.playeractivity.subtitles_language",
+      "english": "Subtitles: {language}",
+      "translation": "الترجمة: {language}"
+    },
+    {
+      "key": "ui.playeractivity.subtitles_show_here",
+      "english": "Subtitles show here",
+      "translation": "تظهر الترجمة هنا"
+    },
+    {
+      "key": "ui.playeractivity.subtitles_value",
+      "english": "Subtitles · {value}",
+      "translation": "الترجمة · {value}"
+    },
+    {
+      "key": "ui.playeractivity.zoom_value",
+      "english": "Zoom · {value}",
+      "translation": "التكبير · {value}"
+    },
+    {
+      "key": "ui.playeractivity.zoom_value_2",
+      "english": "Zoom: {value}",
+      "translation": "التكبير: {value}"
+    },
+    {
+      "key": "ui.pointer.focus_mode_hold_ok_5s_for_pointer",
+      "english": "Focus mode  ·  hold OK 5s for pointer",
+      "translation": "وضع التركيز  ·  اضغط مطوّلًا على OK لمدة 5 ثوانٍ للتبديل إلى المؤشر"
+    },
+    {
+      "key": "ui.pointer.keep_holding_for_focus_mode",
+      "english": "Keep holding for focus mode",
+      "translation": "استمر بالضغط للتبديل إلى وضع التركيز"
+    },
+    {
+      "key": "ui.pointer.keep_holding_for_pointer",
+      "english": "Keep holding for pointer",
+      "translation": "استمر بالضغط للتبديل إلى وضع المؤشر"
+    },
+    {
+      "key": "ui.pointer.pointer_mode_hold_ok_5s_for_focus_mode",
+      "english": "Pointer mode  ·  hold OK 5s for focus mode",
+      "translation": "وضع المؤشر  ·  اضغط مطوّلًا على OK لمدة 5 ثوانٍ للتبديل إلى التركيز"
+    },
+    {
+      "key": "ui.searchactivity.can_t_reach_the_movie_catalog_check_warp",
+      "english": "Can't reach the movie catalog. Check WARP in Settings, then search again.",
+      "translation": "تعذّر الوصول إلى فهرس الأفلام. تحقّق من WARP في الإعدادات، ثم ابحث مرة أخرى."
+    },
+    {
+      "key": "ui.searchactivity.movies_series",
+      "english": "Movies & series",
+      "translation": "الأفلام والمسلسلات"
+    },
+    {
+      "key": "ui.searchactivity.movies_series_count",
+      "english": "Movies & series  ·  {count}",
+      "translation": "الأفلام والمسلسلات  ·  {count}"
+    },
+    {
+      "key": "ui.searchactivity.nothing_found_for_query",
+      "english": "Nothing found for “{query}”",
+      "translation": "لا توجد نتائج لـ «{query}»"
+    },
+    {
+      "key": "ui.searchactivity.search_movies_series_sites_or_languages",
+      "english": "Search movies, series, sites or languages",
+      "translation": "ابحث عن أفلام أو مسلسلات أو مواقع أو لغات"
+    },
+    {
+      "key": "ui.searchactivity.searching_movies_and_series",
+      "english": "Searching movies and series…",
+      "translation": "جارٍ البحث عن الأفلام والمسلسلات…"
+    },
+    {
+      "key": "ui.searchactivity.sites_count_showing_max",
+      "english": "Sites  ·  {count} (showing {max})",
+      "translation": "المواقع  ·  {count} (يُعرض {max})"
+    },
+    {
+      "key": "ui.searchactivity.try_anime_sports_4k_spanish_korean_p_stream",
+      "english": "Try: anime, sports, 4k, spanish, korean, p-stream, live tv…",
+      "translation": "جرّب: أنمي، رياضة، 4k، إسباني، كوري، p-stream، بث مباشر…"
+    },
+    {
+      "key": "ui.searchactivity.you_watched",
+      "english": "You watched",
+      "translation": "ما شاهدته"
+    },
+    {
+      "key": "ui.simkl.marked_watched_on_simkl",
+      "english": "Marked watched on Simkl",
+      "translation": "تم التحديد كمُشاهَد على Simkl"
+    },
+    {
+      "key": "ui.sites.streaming_sites",
+      "english": "Streaming Sites",
+      "translation": "مواقع البث"
+    },
+    {
+      "key": "ui.subs.chinese_bilingual",
+      "english": "Chinese (bilingual)",
+      "translation": "الصينية (ثنائية اللغة)"
+    },
+    {
+      "key": "ui.subs.chinese_cantonese",
+      "english": "Chinese (Cantonese)",
+      "translation": "الصينية (الكانتونية)"
+    },
+    {
+      "key": "ui.subs.chinese_traditional",
+      "english": "Chinese (Traditional)",
+      "translation": "الصينية (التقليدية)"
+    },
+    {
+      "key": "ui.subs.done",
+      "english": "Done",
+      "translation": "تم"
+    },
+    {
+      "key": "ui.subs.down_count",
+      "english": "Down {count}",
+      "translation": "لأسفل {count}"
+    },
+    {
+      "key": "ui.subs.extremaduran",
+      "english": "Extremaduran",
+      "translation": "الإكستريمادورية"
+    },
+    {
+      "key": "ui.subs.fonts",
+      "english": "Fonts",
+      "translation": "الخطوط"
+    },
+    {
+      "key": "ui.subs.in_sync",
+      "english": "In sync",
+      "translation": "متزامن"
+    },
+    {
+      "key": "ui.subs.portuguese",
+      "english": "Portuguese",
+      "translation": "البرتغالية"
+    },
+    {
+      "key": "ui.subs.portuguese_brazil",
+      "english": "Portuguese (Brazil)",
+      "translation": "البرتغالية (البرازيل)"
+    },
+    {
+      "key": "ui.subs.position",
+      "english": "Position",
+      "translation": "الموضع"
+    },
+    {
+      "key": "ui.subs.position_moves_them_up_timing_is_on_the",
+      "english": "Position: + moves them up. Timing is on the player's Subtitles button.",
+      "translation": "الموضع: + يحرّكها لأعلى. التوقيت متاح من زر الترجمة في المشغّل."
+    },
+    {
+      "key": "ui.subs.position_moves_them_up_timing_shows_them_later",
+      "english": "Position: + moves them up.  Timing: + shows them later, − earlier.",
+      "translation": "الموضع: + يحرّكها لأعلى.  التوقيت: + يعرضها لاحقًا، − يعرضها مبكرًا."
+    },
+    {
+      "key": "ui.subs.reset",
+      "english": "Reset",
+      "translation": "إعادة تعيين"
+    },
+    {
+      "key": "ui.subs.seconds_s",
+      "english": "{seconds} s",
+      "translation": "{seconds} ث"
+    },
+    {
+      "key": "ui.subs.size",
+      "english": "Size",
+      "translation": "الحجم"
+    },
+    {
+      "key": "ui.subs.spanish_latin_america",
+      "english": "Spanish (Latin America)",
+      "translation": "الإسبانية (أمريكا اللاتينية)"
+    },
+    {
+      "key": "ui.subs.spanish_spain",
+      "english": "Spanish (Spain)",
+      "translation": "الإسبانية (إسبانيا)"
+    },
+    {
+      "key": "ui.subs.thmanyah_sans_face",
+      "english": "Thmanyah Sans {face}",
+      "translation": "Thmanyah Sans {face}"
+    },
+    {
+      "key": "ui.subs.timing",
+      "english": "Timing",
+      "translation": "التوقيت"
+    },
+    {
+      "key": "ui.subs.up_count",
+      "english": "Up {count}",
+      "translation": "لأعلى {count}"
+    },
+    {
+      "key": "ui.titleactivity.episode_episode",
+      "english": "Episode {episode}",
+      "translation": "الحلقة {episode}"
+    },
+    {
+      "key": "ui.titleactivity.episodes",
+      "english": "Episodes",
+      "translation": "الحلقات"
+    },
+    {
+      "key": "ui.titleactivity.in_my_list",
+      "english": "✓  In My list",
+      "translation": "✓  في قائمتي"
+    },
+    {
+      "key": "ui.titleactivity.my_list",
+      "english": "+  My list",
+      "translation": "+  قائمتي"
+    },
+    {
+      "key": "ui.titleactivity.no_site_available",
+      "english": "No site available",
+      "translation": "لا يتوفر موقع"
+    },
+    {
+      "key": "ui.titleactivity.no_site_to_watch_on",
+      "english": "No site to watch on",
+      "translation": "لا يوجد موقع للمشاهدة"
+    },
+    {
+      "key": "ui.titleactivity.season_season",
+      "english": "Season {season}",
+      "translation": "الموسم {season}"
+    },
+    {
+      "key": "ui.titleactivity.season_season_episode_episode_pick_it_on_the",
+      "english": "Season {season}, episode {episode}: pick it on the site",
+      "translation": "الموسم {season}، الحلقة {episode}: اخترها من الموقع"
+    },
+    {
+      "key": "ui.titleactivity.watch_on_site",
+      "english": "▶  Watch on {site}",
+      "translation": "▶  المشاهدة على {site}"
+    },
+    {
+      "key": "ui.titleactivity.watch_on_tap_a_site_to_open_title",
+      "english": "Watch on  ·  tap a site to open “{title}”",
+      "translation": "المشاهدة على  ·  اضغط على موقع لفتح «{title}»"
+    },
+    {
+      "key": "ui.update.downloading_percent",
+      "english": "Downloading {percent}%",
+      "translation": "جارٍ التنزيل {percent}٪"
+    },
+    {
+      "key": "ui.update.installing",
+      "english": "Installing",
+      "translation": "جارٍ التثبيت"
+    },
+    {
+      "key": "ui.update.no_download_for_this_build",
+      "english": "No download for this build",
+      "translation": "لا يتوفر تنزيل لهذا الإصدار"
+    },
+    {
+      "key": "ui.update.update_failed_error",
+      "english": "Update failed: {error}",
+      "translation": "فشل التحديث: {error}"
+    },
+    {
+      "key": "ui.webactivity.allow_storage_then_tap_download_again",
+      "english": "Allow storage, then tap download again",
+      "translation": "اسمح بالوصول إلى التخزين، ثم اضغط على تنزيل مرة أخرى"
+    },
+    {
+      "key": "ui.webactivity.back_to_home",
+      "english": "Back to home",
+      "translation": "العودة إلى الرئيسية"
+    },
+    {
+      "key": "ui.webactivity.blocked_host",
+      "english": "Blocked {host}",
+      "translation": "تم حظر {host}"
+    },
+    {
+      "key": "ui.webactivity.blocked_scheme_link",
+      "english": "Blocked {scheme}: link",
+      "translation": "تم حظر رابط {scheme}:"
+    },
+    {
+      "key": "ui.webactivity.cloudflare_blocked_warp_loading_site_direct",
+      "english": "Cloudflare blocked WARP, loading {site} direct",
+      "translation": "حظر Cloudflare اتصال WARP، جارٍ تحميل {site} مباشرة"
+    },
+    {
+      "key": "ui.webactivity.cloudflare_check_hold_ok_5_s_for_pointer",
+      "english": "Cloudflare check: hold OK 5 s for pointer mode, then tick the box",
+      "translation": "تحقّق Cloudflare: اضغط مطوّلًا على OK لمدة 5 ثوانٍ للتبديل إلى وضع المؤشر، ثم ضع علامة في المربع"
+    },
+    {
+      "key": "ui.webactivity.cloudflare_check_tick_the_box",
+      "english": "Cloudflare check: tick the box",
+      "translation": "تحقّق Cloudflare: ضع علامة في المربع"
+    },
+    {
+      "key": "ui.webactivity.connecting_warp",
+      "english": "Connecting WARP…",
+      "translation": "جارٍ الاتصال بـ WARP…"
+    },
+    {
+      "key": "ui.webactivity.cursor_mode_arrows_move_it_ok_taps_hold",
+      "english": "Cursor mode: arrows move it, OK taps. Hold OK 5 s to switch to focus mode.",
+      "translation": "وضع المؤشر: الأسهم تحرّكه، وOK ينقر. اضغط مطوّلًا على OK لمدة 5 ثوانٍ للتبديل إلى وضع التركيز."
+    },
+    {
+      "key": "ui.webactivity.don_t_use_warp_for_site",
+      "english": "Don't use WARP for {site}",
+      "translation": "عدم استخدام WARP مع {site}"
+    },
+    {
+      "key": "ui.webactivity.download_failed_error",
+      "english": "Download failed: {error}",
+      "translation": "فشل التنزيل: {error}"
+    },
+    {
+      "key": "ui.webactivity.downloading_name",
+      "english": "Downloading {name}",
+      "translation": "جارٍ تنزيل {name}"
+    },
+    {
+      "key": "ui.webactivity.loading_this_site_direct",
+      "english": "Loading this site direct",
+      "translation": "جارٍ تحميل هذا الموقع مباشرة"
+    },
+    {
+      "key": "ui.webactivity.native_player",
+      "english": "▶ Native player",
+      "translation": "▶ المشغّل الأصلي"
+    },
+    {
+      "key": "ui.webactivity.native_player_auto_switches_when_a_video_starts",
+      "english": "Native player: auto (switches when a video starts)",
+      "translation": "المشغّل الأصلي: تلقائي (يتحوّل عند بدء الفيديو)"
+    },
+    {
+      "key": "ui.webactivity.native_player_off",
+      "english": "Native player: off",
+      "translation": "المشغّل الأصلي: متوقف"
+    },
+    {
+      "key": "ui.webactivity.native_player_off_2",
+      "english": "Native player off",
+      "translation": "تم إيقاف المشغّل الأصلي"
+    },
+    {
+      "key": "ui.webactivity.native_player_on",
+      "english": "Native player on",
+      "translation": "تم تشغيل المشغّل الأصلي"
+    },
+    {
+      "key": "ui.webactivity.no_app_can_open_url",
+      "english": "No app can open {url}",
+      "translation": "لا يوجد تطبيق يمكنه فتح {url}"
+    },
+    {
+      "key": "ui.webactivity.no_video_found_on_this_page_yet",
+      "english": "No video found on this page yet",
+      "translation": "لم يُعثر على فيديو في هذه الصفحة بعد"
+    },
+    {
+      "key": "ui.webactivity.ok",
+      "english": "OK",
+      "translation": "موافق"
+    },
+    {
+      "key": "ui.webactivity.play_in_native_player",
+      "english": "Play in native player",
+      "translation": "تشغيل في المشغّل الأصلي"
+    },
+    {
+      "key": "ui.webactivity.pop_up_blocked",
+      "english": "Pop-up blocked",
+      "translation": "تم حظر النافذة المنبثقة"
+    },
+    {
+      "key": "ui.webactivity.reload",
+      "english": "Reload",
+      "translation": "إعادة تحميل"
+    },
+    {
+      "key": "ui.webactivity.saved_name_to_downloads",
+      "english": "Saved {name} to Downloads",
+      "translation": "تم حفظ {name} في التنزيلات"
+    },
+    {
+      "key": "ui.webactivity.sign_in",
+      "english": "Sign in",
+      "translation": "تسجيل الدخول"
+    },
+    {
+      "key": "ui.webactivity.sign_in_to_host",
+      "english": "Sign in to {host}",
+      "translation": "تسجيل الدخول إلى {host}"
+    },
+    {
+      "key": "ui.webactivity.smooth_video_off",
+      "english": "Smooth video: off",
+      "translation": "تنعيم الفيديو: متوقف"
+    },
+    {
+      "key": "ui.webactivity.smooth_video_off_2",
+      "english": "Smooth video off",
+      "translation": "تم إيقاف تنعيم الفيديو"
+    },
+    {
+      "key": "ui.webactivity.smooth_video_on",
+      "english": "Smooth video on",
+      "translation": "تم تشغيل تنعيم الفيديو"
+    },
+    {
+      "key": "ui.webactivity.smooth_video_on_hides_page_layers_over_the",
+      "english": "Smooth video: on (hides page layers over the video)",
+      "translation": "تنعيم الفيديو: مفعّل (يخفي طبقات الصفحة فوق الفيديو)"
+    },
+    {
+      "key": "ui.webactivity.switch_to_focus_mode",
+      "english": "Switch to focus mode",
+      "translation": "التبديل إلى وضع التركيز"
+    },
+    {
+      "key": "ui.webactivity.switch_to_pointer_mode",
+      "english": "Switch to pointer mode",
+      "translation": "التبديل إلى وضع المؤشر"
+    },
+    {
+      "key": "ui.webactivity.use_warp_for_site",
+      "english": "Use WARP for {site}",
+      "translation": "استخدام WARP مع {site}"
+    },
+    {
+      "key": "ui.webactivity.warp_failed_loading_directly",
+      "english": "WARP failed, loading directly",
+      "translation": "فشل WARP، جارٍ التحميل مباشرة"
+    },
+    {
+      "key": "ui.webactivity.warp_on_for_this_site",
+      "english": "WARP on for this site",
+      "translation": "WARP مفعّل لهذا الموقع"
+    },
+    {
+      "key": "ui.subs.typography",
+      "english": "Typography",
+      "translation": "الخط والحجم"
+    },
+    {
+      "key": "ui.subs.outline_and_shadow",
+      "english": "Outline & shadow",
+      "translation": "الحدود والظل"
+    },
+    {
+      "key": "ui.subs.background",
+      "english": "Background",
+      "translation": "الخلفية"
+    },
+    {
+      "key": "ui.subs.preview",
+      "english": "Preview",
+      "translation": "معاينة"
+    },
+    {
+      "key": "ui.subs.text_color",
+      "english": "Text color",
+      "translation": "لون النص"
+    },
+    {
+      "key": "ui.subs.outline_size",
+      "english": "Outline size",
+      "translation": "سُمك الحدود"
+    },
+    {
+      "key": "ui.subs.outline_color",
+      "english": "Outline color",
+      "translation": "لون الحدود"
+    },
+    {
+      "key": "ui.subs.shadow_strength",
+      "english": "Shadow strength",
+      "translation": "قوة الظل"
+    },
+    {
+      "key": "ui.subs.shadow_offset",
+      "english": "Shadow offset",
+      "translation": "إزاحة الظل"
+    },
+    {
+      "key": "ui.subs.shadow_color",
+      "english": "Shadow color",
+      "translation": "لون الظل"
+    },
+    {
+      "key": "ui.subs.background_opacity",
+      "english": "Background opacity",
+      "translation": "شفافية الخلفية"
+    },
+    {
+      "key": "ui.subs.background_color",
+      "english": "Background color",
+      "translation": "لون الخلفية"
+    },
+    {
+      "key": "ui.subs.custom_color",
+      "english": "Custom color",
+      "translation": "لون مخصص"
+    },
+    {
+      "key": "ui.subs.red",
+      "english": "Red",
+      "translation": "أحمر"
+    },
+    {
+      "key": "ui.subs.green",
+      "english": "Green",
+      "translation": "أخضر"
+    },
+    {
+      "key": "ui.subs.blue",
+      "english": "Blue",
+      "translation": "أزرق"
+    },
+    {
+      "key": "ui.subs.opacity",
+      "english": "Opacity",
+      "translation": "الشفافية"
+    },
+    {
+      "key": "ui.subs.apply",
+      "english": "Apply",
+      "translation": "تطبيق"
+    },
+    {
+      "key": "ui.subs.white",
+      "english": "White",
+      "translation": "أبيض"
+    },
+    {
+      "key": "ui.subs.yellow",
+      "english": "Yellow",
+      "translation": "أصفر"
+    },
+    {
+      "key": "ui.subs.cyan",
+      "english": "Cyan",
+      "translation": "سماوي"
+    },
+    {
+      "key": "ui.subs.pink",
+      "english": "Pink",
+      "translation": "وردي"
+    },
+    {
+      "key": "ui.subs.alignment",
+      "english": "Alignment",
+      "translation": "المحاذاة"
+    },
+    {
+      "key": "ui.subs.start",
+      "english": "Start",
+      "translation": "بداية"
+    },
+    {
+      "key": "ui.subs.center",
+      "english": "Center",
+      "translation": "وسط"
+    },
+    {
+      "key": "ui.subs.end",
+      "english": "End",
+      "translation": "نهاية"
+    }
+  ]
+}

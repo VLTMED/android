@@ -3,5 +3,6 @@
     <style name="AppTheme" parent="@android:style/Theme.Material.NoActionBar">
         <item name="android:windowBackground">@color/icon_bg</item>
         <item name="android:colorAccent">#FF3B5C</item>
+        <item name="android:fontFamily">@font/thmanyah_sans_medium</item>
     </style>
 </resources>

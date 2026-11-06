@@ -25,6 +25,7 @@ public class App extends Application {
         super.onCreate();
         app = this;
         prefs = getSharedPreferences("fmhyplay", MODE_PRIVATE);
+        Localization.initialize(this);
         // The TV and Android builds each carry a "flavor" asset; anything else (old builds) guesses from the device
         try (java.io.InputStream in = getAssets().open("flavor")) { byte[] b = new byte[16]; flavor = new String(b, 0, Math.max(0, in.read(b))).trim(); } catch (java.io.IOException ignored) { }
         // Phones and tablets (touchscreen, not in TV mode) are never "tv", whichever APK was installed

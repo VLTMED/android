@@ -36,6 +36,54 @@ final class Subs {
         return size() == 100 ? "Default" : size() + "%";
     }
 
+    static final int COLOR_TEXT = 0, COLOR_OUTLINE = 1, COLOR_SHADOW = 2, COLOR_BACKGROUND = 3;
+
+    static int color(int role) {
+        switch (role) {
+            case COLOR_OUTLINE: return App.prefs.getInt("subOutlineColor", android.graphics.Color.BLACK);
+            case COLOR_SHADOW: return App.prefs.getInt("subShadowColor", android.graphics.Color.BLACK);
+            case COLOR_BACKGROUND: return App.prefs.getInt("subBackgroundColor", 0x88000000);
+            default: return App.prefs.getInt("subTextColor", android.graphics.Color.WHITE);
+        }
+    }
+
+    static void setColor(int role, int value) {
+        String key = role == COLOR_OUTLINE ? "subOutlineColor" : role == COLOR_SHADOW ? "subShadowColor" : role == COLOR_BACKGROUND ? "subBackgroundColor" : "subTextColor";
+        App.prefs.edit().putInt(key, value).apply();
+    }
+
+    static int outlineWidth() { return App.prefs.getInt("subOutlineWidth", 0); }
+    static void setOutlineWidth(int value) { App.prefs.edit().putInt("subOutlineWidth", Math.max(0, Math.min(6, value))).apply(); }
+    static int shadowRadius() { return App.prefs.getInt("subShadowRadius", 3); }
+    static void setShadowRadius(int value) { App.prefs.edit().putInt("subShadowRadius", Math.max(0, Math.min(8, value))).apply(); }
+    static int shadowOffset() { return App.prefs.getInt("subShadowOffset", 1); }
+    static void setShadowOffset(int value) { App.prefs.edit().putInt("subShadowOffset", Math.max(-6, Math.min(6, value))).apply(); }
+    static int backgroundOpacity() { return android.graphics.Color.alpha(color(COLOR_BACKGROUND)); }
+    static int alignment() { return Math.max(0, Math.min(2, App.prefs.getInt("subtitleAlignment", 1))); }
+    static void setAlignment(int value) { App.prefs.edit().putInt("subtitleAlignment", Math.max(0, Math.min(2, value))).apply(); }
+    static int alignmentGravity() { return alignment() == 0 ? android.view.Gravity.START : alignment() == 2 ? android.view.Gravity.END : android.view.Gravity.CENTER_HORIZONTAL; }
+
+    static void setBackgroundOpacity(int alpha) {
+        int c = color(COLOR_BACKGROUND);
+        setColor(COLOR_BACKGROUND, android.graphics.Color.argb(Math.max(0, Math.min(255, alpha)), android.graphics.Color.red(c), android.graphics.Color.green(c), android.graphics.Color.blue(c)));
+    }
+
+    static void applyAppearance(SubtitleTextView view, android.content.Context context) {
+        view.setTextSize(22f * size() / 100f);
+        view.setTypeface(Fonts.subtitle(context));
+        view.setTextColor(color(COLOR_TEXT));
+        view.setGravity(android.view.Gravity.CENTER_VERTICAL | alignmentGravity());
+        view.setOutline(Home.dp(context, outlineWidth()), color(COLOR_OUTLINE));
+        view.setSubtitleShadow(Home.dp(context, shadowRadius()), 0, Home.dp(context, shadowOffset()), color(COLOR_SHADOW));
+        view.setBackground(backgroundOpacity() == 0 ? null : Home.rounded(color(COLOR_BACKGROUND), Home.dp(context, 7)));
+        view.setPadding(Home.dp(context, 10), Home.dp(context, 4), Home.dp(context, 10), Home.dp(context, 4));
+    }
+
+    static void resetAppearance() {
+        App.prefs.edit().remove("subTextColor").remove("subOutlineColor").remove("subShadowColor")
+            .remove("subBackgroundColor").remove("subOutlineWidth").remove("subShadowRadius").remove("subShadowOffset").remove("subtitleAlignment").apply();
+    }
+
     /** Subtitle timing for the video playing now, in ms (not saved): positive shows them later, negative earlier. Read on the player's thread. */
     static volatile long delayMs;
 
@@ -47,107 +95,9 @@ final class Subs {
         App.prefs.edit().putInt(key, Math.max(min, Math.min(max, App.prefs.getInt(key, def) + by))).apply();
     }
 
-    /**
-     * One panel for how subtitles look: Size, Position and (in the player) Timing, each with − and + buttons, and Reset.
-     * Every press applies at once; `changed` runs after each, `closed` when the panel goes away. It sits at the top so the subtitles stay in view.
-     */
+    /** Opens the grouped, live-preview subtitle appearance panel. */
     static void panel(android.app.Activity a, boolean timing, Runnable changed, Runnable closed) {
-        android.app.Dialog d = new android.app.Dialog(a);
-        d.requestWindowFeature(android.view.Window.FEATURE_NO_TITLE);
-        android.widget.LinearLayout box = new android.widget.LinearLayout(a);
-        box.setOrientation(android.widget.LinearLayout.VERTICAL);
-        int pad = Home.dp(a, 20);
-        box.setPadding(pad, pad, pad, Home.dp(a, 12));
-        box.setBackground(Home.rounded(0xF0181320, Home.dp(a, 18)));
-        android.widget.TextView title = new android.widget.TextView(a);
-        title.setText("Subtitles");
-        title.setTextColor(Home.TEXT);
-        title.setTextSize(20);
-        title.setTypeface(android.graphics.Typeface.create("sans-serif-medium", android.graphics.Typeface.NORMAL));
-        title.setPadding(0, 0, 0, Home.dp(a, 8));
-        box.addView(title);
-        List<Runnable> refresh = new ArrayList<>();
-        Runnable after = () -> { for (Runnable r : refresh) r.run(); changed.run(); };
-        row(a, box, refresh, "Size", Subs::sizeLabel, by -> bump("subSize", 100, 10 * by, 50, 250), after);
-        row(a, box, refresh, "Position", Subs::offsetLabel, by -> bump("subOffset", 0, 10 * by, -100, 200), after);
-        if (timing) row(a, box, refresh, "Timing", Subs::delayLabel, by -> delayMs = Math.max(-30000, Math.min(30000, delayMs + 100L * by)), after);
-        android.widget.TextView help = new android.widget.TextView(a);
-        help.setText(timing ? "Position: + moves them up.  Timing: + shows them later, \u2212 earlier." : "Position: + moves them up. Timing is on the player's Subtitles button.");
-        help.setTextColor(Home.MUTED);
-        help.setTextSize(13);
-        help.setPadding(0, Home.dp(a, 6), 0, Home.dp(a, 4));
-        box.addView(help);
-        android.widget.LinearLayout foot = new android.widget.LinearLayout(a);
-        foot.setGravity(android.view.Gravity.END);
-        foot.addView(button(a, "Reset", 0, v -> {
-            App.prefs.edit().remove("subSize").remove("subOffset").apply();
-            if (timing) delayMs = 0;
-            after.run();
-        }));
-        foot.addView(button(a, "Done", 0, v -> d.dismiss()));
-        box.addView(foot);
-        d.setContentView(box);
-        android.view.Window w = d.getWindow();
-        w.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(0));
-        w.setGravity(android.view.Gravity.TOP);
-        w.setDimAmount(0.15f);
-        w.setLayout(Math.min(a.getResources().getDisplayMetrics().widthPixels - Home.dp(a, 24), Home.dp(a, 560)), -2);
-        w.getAttributes().y = Home.dp(a, 16);
-        d.setOnDismissListener(x -> closed.run());
-        d.show();
-        box.getChildAt(1).findViewWithTag("plus").requestFocus();   // the remote starts on Size +
-    }
-
-    /** Label, − button, value, + button. `step` gets −1 or +1. */
-    private static void row(android.app.Activity a, android.widget.LinearLayout box, List<Runnable> refresh, String label,
-                            java.util.function.Supplier<String> value, java.util.function.IntConsumer step, Runnable after) {
-        android.widget.LinearLayout r = new android.widget.LinearLayout(a);
-        r.setGravity(android.view.Gravity.CENTER_VERTICAL);
-        r.setPadding(0, Home.dp(a, 4), 0, Home.dp(a, 4));
-        android.widget.TextView name = new android.widget.TextView(a);
-        name.setText(label);
-        name.setTextColor(Home.TEXT);
-        name.setTextSize(17);
-        r.addView(name, new android.widget.LinearLayout.LayoutParams(0, -2, 1));
-        android.widget.TextView now = new android.widget.TextView(a);
-        now.setTextColor(Home.TEXT);
-        now.setTextSize(17);
-        now.setGravity(android.view.Gravity.CENTER);
-        now.setTypeface(android.graphics.Typeface.create("sans-serif-medium", android.graphics.Typeface.NORMAL));
-        refresh.add(() -> now.setText(value.get()));
-        now.setText(value.get());
-        r.addView(button(a, "\u2212", Home.dp(a, 52), v -> { step.accept(-1); after.run(); }));
-        r.addView(now, new android.widget.LinearLayout.LayoutParams(Home.dp(a, 130), -2));
-        android.widget.TextView plus = button(a, "+", Home.dp(a, 52), v -> { step.accept(1); after.run(); });
-        plus.setTag("plus");
-        r.addView(plus);
-        box.addView(r);
-    }
-
-    /** A rounded button with the accent ring when focused (remote) or pressed; `size` 0 = as wide as its text. */
-    private static android.widget.TextView button(android.app.Activity a, String text, int size, android.view.View.OnClickListener click) {
-        android.widget.TextView b = new android.widget.TextView(a);
-        b.setText(text);
-        b.setTextColor(Home.TEXT);
-        b.setTextSize(size > 0 ? 24 : 16);
-        b.setGravity(android.view.Gravity.CENTER);
-        b.setTypeface(android.graphics.Typeface.create("sans-serif-medium", android.graphics.Typeface.NORMAL));
-        int r = Home.dp(a, 26);
-        android.graphics.drawable.GradientDrawable on = Home.rounded(0x55FF3B5C, r);
-        on.setStroke(Home.dp(a, 3), Home.ACCENT);
-        android.graphics.drawable.StateListDrawable bg = new android.graphics.drawable.StateListDrawable();
-        bg.addState(new int[]{android.R.attr.state_focused}, on);
-        bg.addState(new int[]{android.R.attr.state_pressed}, on);
-        bg.addState(new int[]{}, Home.rounded(0x26FFFFFF, r));
-        b.setBackground(bg);
-        b.setFocusable(true);
-        b.setClickable(true);
-        b.setOnClickListener(click);
-        android.widget.LinearLayout.LayoutParams lp = size > 0 ? new android.widget.LinearLayout.LayoutParams(size, size) : new android.widget.LinearLayout.LayoutParams(-2, Home.dp(a, 44));
-        lp.setMargins(Home.dp(a, 6), 0, Home.dp(a, 6), 0);
-        if (size == 0) b.setPadding(Home.dp(a, 20), 0, Home.dp(a, 20), 0);
-        b.setLayoutParams(lp);
-        return b;
+        SubtitleStylePanel.show(a, timing, changed, closed);
     }
 
     /** season 0 = a movie. Null when OpenSubtitles can't be reached. Call off the main thread. */

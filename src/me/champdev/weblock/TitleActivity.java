@@ -63,7 +63,7 @@ public class TitleActivity extends Home {
         LinearLayout info = new LinearLayout(this);
         info.setOrientation(LinearLayout.VERTICAL);
         info.setPadding(u(24, 14), 0, 0, 0);
-        TextView name = text(t.name, sp(30, 21), TEXT, true);
+        TextView name = textRaw(t.name, sp(30, 21), TEXT, true);
         name.setMaxLines(3);
         name.setEllipsize(TextUtils.TruncateAt.END);
         info.addView(name);
@@ -71,16 +71,16 @@ public class TitleActivity extends Home {
         if (!t.year.isEmpty() && !t.year.equals("null")) meta.add(t.year);
         if (!t.runtime.isEmpty()) meta.add(t.runtime);
         if (!t.rating.isEmpty()) meta.add("★ " + t.rating);
-        TextView line = text(String.join("  ·  ", meta), sp(15, 13), MUTED, false);
+        TextView line = textRaw(String.join("  ·  ", meta), sp(15, 13), MUTED, false);
         line.setPadding(0, dp(6), 0, 0);
         info.addView(line);
         if (!t.genres.isEmpty()) {
-            TextView genres = text(t.genres, sp(14, 12), MUTED, false);
+            TextView genres = textRaw(t.genres, sp(14, 12), MUTED, false);
             genres.setPadding(0, dp(3), 0, 0);
             info.addView(genres);
         }
         if (App.tv) {
-            TextView overview = text(t.overview, 15, TEXT, false);
+            TextView overview = textRaw(t.overview, 15, TEXT, false);
             overview.setPadding(0, dp(12), 0, 0);
             overview.setMaxLines(6);
             overview.setEllipsize(TextUtils.TruncateAt.END);
@@ -90,7 +90,7 @@ public class TitleActivity extends Home {
         col.addView(hero);
 
         if (!App.tv && !t.overview.isEmpty()) {
-            TextView overview = text(t.overview, 13, TEXT, false);
+            TextView overview = textRaw(t.overview, 13, TEXT, false);
             overview.setPadding(0, dp(12), 0, 0);
             col.addView(overview);
         }
@@ -170,12 +170,15 @@ public class TitleActivity extends Home {
             LinearLayout text = new LinearLayout(this);
             text.setOrientation(LinearLayout.VERTICAL);
             text.setPadding(u(16, 10), 0, 0, 0);
-            TextView title = text(e.number + "  " + (e.title.isEmpty() ? "Episode " + e.number : e.title), sp(16, 14), TEXT, true);
+            String episodeTitle = e.title.isEmpty()
+                ? e.number + "  " + Localization.translate(this, "Episode " + e.number)
+                : e.number + "  " + e.title;
+            TextView title = textRaw(episodeTitle, sp(16, 14), TEXT, true);
             title.setSingleLine();
             title.setEllipsize(TextUtils.TruncateAt.END);
             text.addView(title);
             if (!e.overview.isEmpty()) {
-                TextView o = text(e.overview, sp(13, 12), MUTED, false);
+                TextView o = textRaw(e.overview, sp(13, 12), MUTED, false);
                 o.setMaxLines(2);
                 o.setEllipsize(TextUtils.TruncateAt.END);
                 o.setPadding(0, dp(2), 0, 0);

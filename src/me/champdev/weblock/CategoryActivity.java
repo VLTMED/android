@@ -15,7 +15,8 @@ public class CategoryActivity extends Home {
         String name = language != null ? language : category;
         List<Sites.Site> sites = language != null ? Sites.languages().get(language) : Sites.load().get(category);
 
-        TextView title = text(name + (sites == null ? "" : "  ·  " + sites.size()), sp(26, 22), TEXT, true);
+        String displayName = Localization.translate(this, name).toString();
+        TextView title = text(displayName + (sites == null ? "" : "  ·  " + sites.size()), sp(26, 22), TEXT, true);
         title.setPadding(0, 0, 0, dp(8));
         col.addView(title);
         TextView hint = text(App.tv ? "Hold OK on a site for favorites and mirrors" : "Long-press a site for favorites and mirrors", 13, MUTED, false);

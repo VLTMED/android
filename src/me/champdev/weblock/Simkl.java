@@ -115,7 +115,7 @@ final class Simkl {
                     // Simkl keeps one call per user going for up to 20 s: the final stop (the one that marks it watched) waits and tries again
                     if (status[0] == 429 && action.equals("stop") && attempt == 0) { Thread.sleep(21000); continue; }
                     if (action.equals("stop") && status[0] < 300 && reply.contains("\"scrobble\""))
-                        App.main.post(() -> android.widget.Toast.makeText(App.app, "Marked watched on Simkl", android.widget.Toast.LENGTH_SHORT).show());
+                        App.main.post(() -> LocalizedToast.makeText(App.app, "Marked watched on Simkl", android.widget.Toast.LENGTH_SHORT).show());
                     Log.i("Simkl", action + " " + status[0] + " " + reply.substring(0, Math.min(300, reply.length())));
                     return;
                 }

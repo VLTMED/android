@@ -70,7 +70,10 @@ public class PlayerActivity extends Activity {
 
     ExoPlayer player;
     SurfaceView surface;
-    TextView subtitle, title, time, timeTotal, notice;
+    SubtitleTextView subtitle;
+    TextView title, time, timeTotal, notice, speedBoostLabel;
+    float speedBeforeHold = 1f;
+    boolean speedBoostActive;
     ProgressBar spinner;
     ImageView playPause;
     SeekBar seek;
@@ -148,11 +151,11 @@ public class PlayerActivity extends Activity {
         FrameLayout f = new FrameLayout(this);
         ImageView b = circle(icon, 64, () -> seekBy(ms));
         f.addView(b, new FrameLayout.LayoutParams(dp(64), dp(64)));
-        TextView n = new TextView(this);
+        TextView n = new LocalizedTextView(this);
         n.setText("10");
         n.setTextColor(Color.WHITE);
         n.setTextSize(12);
-        n.setTypeface(android.graphics.Typeface.DEFAULT_BOLD);
+        n.setTypeface(Fonts.ui(this));
         n.setGravity(Gravity.CENTER);
         FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(dp(64), dp(64), Gravity.CENTER);
         lp.topMargin = dp(2);
@@ -166,14 +169,16 @@ public class PlayerActivity extends Activity {
     void showCues(CueGroup group) {
         StringBuilder sb = new StringBuilder();
         for (Cue c : group.cues) if (c.text != null) sb.append(sb.length() > 0 ? "\n" : "").append(c.text);
-        subtitle.setText(sb);
+        ((LocalizedTextView) subtitle).setTextUnlocalized(sb);
         subtitle.setVisibility(sb.length() == 0 ? View.GONE : View.VISIBLE);
     }
 
     /** Subtitle size and distance from the bottom: 22 sp and 100 dp (clear of the controls), changed by the Subtitle size and position settings. */
     void placeSubtitle() {
-        subtitle.setTextSize(22f * Subs.size() / 100);
-        ((FrameLayout.LayoutParams) subtitle.getLayoutParams()).bottomMargin = dp(Math.max(0, 100 + Subs.offset()));
+        Subs.applyAppearance(subtitle, this);
+        FrameLayout.LayoutParams subtitleLp = (FrameLayout.LayoutParams) subtitle.getLayoutParams();
+        subtitleLp.gravity = Gravity.BOTTOM | Subs.alignmentGravity();
+        subtitleLp.setMargins(dp(20), 0, dp(20), dp(Math.max(0, 100 + Subs.offset())));
         subtitle.requestLayout();
     }
 
@@ -190,12 +195,8 @@ public class PlayerActivity extends Activity {
         root.addView(surface, new FrameLayout.LayoutParams(-1, -1));
         root.addOnLayoutChangeListener((v, l, t, r, b, ol, ot, or, ob) -> fit());
 
-        subtitle = new TextView(this);
-        subtitle.setTextColor(Color.WHITE);
+        subtitle = new SubtitleTextView(this);
         subtitle.setGravity(Gravity.CENTER);
-        subtitle.setShadowLayer(6, 0, 0, Color.BLACK);
-        subtitle.setBackgroundColor(0x88000000);
-        subtitle.setPadding(dp(10), dp(4), dp(10), dp(4));
         subtitle.setVisibility(View.GONE);
         root.addView(subtitle, new FrameLayout.LayoutParams(-2, -2, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL));
         placeSubtitle();
@@ -204,7 +205,7 @@ public class PlayerActivity extends Activity {
         spinner.setIndeterminateTintList(android.content.res.ColorStateList.valueOf(Home.ACCENT));
         root.addView(spinner, new FrameLayout.LayoutParams(dp(56), dp(56), Gravity.CENTER));
 
-        notice = new TextView(this);
+        notice = new LocalizedTextView(this);
         notice.setTextColor(Color.WHITE);
         notice.setTextSize(18);
         notice.setBackgroundColor(0xAA000000);
@@ -232,13 +233,27 @@ public class PlayerActivity extends Activity {
         LinearLayout.LayoutParams gp = new LinearLayout.LayoutParams(dp(110), dp(6));
         gp.topMargin = dp(10);
         gesture.addView(gestureBar, gp);
-        gestureText = new TextView(this);
+        gestureText = new LocalizedTextView(this);
         gestureText.setTextColor(Color.WHITE);
         gestureText.setTextSize(13);
         gestureText.setPadding(0, dp(6), 0, 0);
         gesture.addView(gestureText);
         gesture.setVisibility(View.GONE);
         root.addView(gesture, new FrameLayout.LayoutParams(-2, -2, Gravity.CENTER));
+
+        speedBoostLabel = new LocalizedTextView(this);
+        speedBoostLabel.setText("2×");
+        speedBoostLabel.setTextColor(Color.WHITE);
+        speedBoostLabel.setTextSize(24);
+        speedBoostLabel.setTypeface(Fonts.ui(this));
+        speedBoostLabel.setGravity(Gravity.CENTER);
+        speedBoostLabel.setPadding(dp(18), dp(10), dp(18), dp(10));
+        speedBoostLabel.setBackground(Home.rounded(0xE6000000, dp(18)));
+        speedBoostLabel.setElevation(dp(8));
+        speedBoostLabel.setVisibility(View.GONE);
+        FrameLayout.LayoutParams speedLabelLp = new FrameLayout.LayoutParams(-2, -2, Gravity.TOP | Gravity.CENTER_HORIZONTAL);
+        speedLabelLp.topMargin = dp(110);
+        root.addView(speedBoostLabel, speedLabelLp);
 
         // Everything that hides after a few seconds lives in one overlay
         FrameLayout overlay = new FrameLayout(this);
@@ -254,7 +269,7 @@ public class PlayerActivity extends Activity {
         LinearLayout titles = new LinearLayout(this);
         titles.setOrientation(LinearLayout.VERTICAL);
         titles.setPadding(dp(14), 0, 0, 0);
-        title = new TextView(this);
+        title = new PlainTextView(this);
         title.setTextColor(Color.WHITE);
         title.setTextSize(18);
         title.setSingleLine();
@@ -267,7 +282,7 @@ public class PlayerActivity extends Activity {
         }
         title.setText(shown);
         titles.addView(title);
-        epLine = new TextView(this);
+        epLine = new LocalizedTextView(this);
         epLine.setTextColor(0xCCFFFFFF);
         epLine.setTextSize(13);
         epLine.setSingleLine();
@@ -310,13 +325,13 @@ public class PlayerActivity extends Activity {
 
             @Override public void onStopTrackingTouch(SeekBar s) { dragging = false; commitSeek(); }
         });
-        time = new TextView(this);
+        time = new LocalizedTextView(this);
         time.setTextColor(Color.WHITE);
         time.setTextSize(14);
         time.setPadding(0, 0, dp(10), 0);
         row.addView(time);
         row.addView(seek, new LinearLayout.LayoutParams(0, -2, 1));
-        timeTotal = new TextView(this);
+        timeTotal = new LocalizedTextView(this);
         timeTotal.setTextColor(Color.WHITE);
         timeTotal.setTextSize(14);
         timeTotal.setPadding(dp(10), 0, 0, 0);
@@ -340,6 +355,7 @@ public class PlayerActivity extends Activity {
         overlay.addView(bar, new FrameLayout.LayoutParams(-1, -2, Gravity.BOTTOM));
         controls = overlay;
         root.addView(overlay, new FrameLayout.LayoutParams(-1, -1));
+        speedBoostLabel.bringToFront();
 
         if (android.os.Build.VERSION.SDK_INT >= 28) getWindow().getAttributes().layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
         root.setOnApplyWindowInsetsListener((v, in) -> {
@@ -356,6 +372,7 @@ public class PlayerActivity extends Activity {
             return in;
         });
         root.setOnClickListener(v -> { if (controls.getVisibility() == View.VISIBLE) hideControls(); else showControls(); });
+        root.setOnLongClickListener(v -> beginHoldSpeed());
         root.setOnTouchListener(this::swipe);
         setContentView(root);
         root.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
@@ -442,11 +459,32 @@ public class PlayerActivity extends Activity {
                 boolean was = swipeKind > 0;
                 swipeKind = 0;
                 if (was) App.main.postDelayed(() -> gesture.setVisibility(View.GONE), 600);
+                if (speedBoostActive) { endHoldSpeed(); return false; }
                 return was;
             }
             default:
                 return swipeKind > 0;
         }
+    }
+
+    private boolean beginHoldSpeed() {
+        if (player == null || !player.isPlaying() || speedBoostActive) return speedBoostActive;
+        speedBeforeHold = player.getPlaybackParameters().speed;
+        speedBoostActive = true;
+        player.setPlaybackSpeed(2f);
+        speedBoostLabel.setVisibility(View.VISIBLE);
+        refreshChips();
+        return true;
+    }
+
+    private void endHoldSpeed() {
+        if (!speedBoostActive) return;
+        speedBoostActive = false;
+        if (player != null) {
+            player.setPlaybackSpeed(speedBeforeHold);
+            refreshChips();
+        }
+        if (speedBoostLabel != null) speedBoostLabel.setVisibility(View.GONE);
     }
 
     /** A pill button: its icon and, beside it, its current value ("720p", "1x", "EN", "Fit"). Only the icon when it has no value. */
@@ -458,10 +496,10 @@ public class PlayerActivity extends Activity {
         img.setImageResource(icon);
         img.setColorFilter(Color.WHITE);
         t.addView(img, new LinearLayout.LayoutParams(dp(22), dp(22)));
-        TextView val = new TextView(this);
+        TextView val = new LocalizedTextView(this);
         val.setTextColor(Color.WHITE);
         val.setTextSize(14);
-        val.setTypeface(android.graphics.Typeface.DEFAULT_BOLD);
+        val.setTypeface(Fonts.ui(this));
         val.setSingleLine();
         val.setPadding(dp(6), 0, 0, 0);
         val.setVisibility(View.GONE);
@@ -738,7 +776,7 @@ public class PlayerActivity extends Activity {
             @Override public void onPlayerError(PlaybackException e) {
                 Log.w(TAG, "playback error", e);
                 if (getIntent().hasExtra("mime")) { Iptv.mark(getIntent().getStringExtra("url"), false); Iptv.saveHealth(); }
-                Toast.makeText(PlayerActivity.this, getIntent().hasExtra("mime") ? "Channel is offline (" + e.getErrorCodeName() + ")"
+                LocalizedToast.makeText(PlayerActivity.this, getIntent().hasExtra("mime") ? "Channel is offline (" + e.getErrorCodeName() + ")"
                     : "Native player could not play this (" + e.getErrorCodeName() + "), back to the page", Toast.LENGTH_LONG).show();
                 setResult(RESULT_CANCELED);
                 finish();
@@ -941,7 +979,7 @@ public class PlayerActivity extends Activity {
         if (page == null || list == null || list.isEmpty()) { say("No " + title.toLowerCase() + " list found on this page"); return; }
         List<String> keys = new ArrayList<>(list.keySet()), labels = new ArrayList<>();
         for (String k : keys) labels.add(list.get(k)[0] + (list.get(k)[1].isEmpty() ? "" : "  \u2713"));
-        new AlertDialog.Builder(this).setTitle(title).setItems(labels.toArray(new String[0]), (d, i) -> {
+        new LocalizedDialogBuilder(this).setTitle(title).setItems(labels.toArray(new String[0]), (d, i) -> {
             carryMs = player.getCurrentPosition();
             carryAt = SystemClock.elapsedRealtime();
             page.switchServer(keys.get(i));
@@ -958,7 +996,7 @@ public class PlayerActivity extends Activity {
     void pickSpeed() {
         String[] labels = new String[SPEEDS.length];
         for (int i = 0; i < labels.length; i++) labels[i] = speedLabel(SPEEDS[i]);
-        new AlertDialog.Builder(this).setTitle("Speed").setItems(labels, (d, i) -> player.setPlaybackSpeed(SPEEDS[i])).show();
+        new LocalizedDialogBuilder(this).setTitle("Speed").setItems(labels, (d, i) -> player.setPlaybackSpeed(SPEEDS[i])).show();
     }
 
     // Quality: the best track of each height, plus Auto
@@ -988,7 +1026,7 @@ public class PlayerActivity extends Activity {
             labels.add(names.get(en.getKey()));
             picks.add(en.getValue());
         }
-        new AlertDialog.Builder(this).setTitle("Quality").setItems(labels.toArray(new String[0]), (d, i) -> {
+        new LocalizedDialogBuilder(this).setTitle("Quality").setItems(labels.toArray(new String[0]), (d, i) -> {
             androidx.media3.common.TrackSelectionParameters.Builder b = player.getTrackSelectionParameters().buildUpon().clearOverridesOfType(C.TRACK_TYPE_VIDEO);
             if (picks.get(i) != null) b.addOverride(picks.get(i));
             player.setTrackSelectionParameters(b.build());
@@ -1018,7 +1056,7 @@ public class PlayerActivity extends Activity {
         if (search) labels.add("\uD83D\uDD0D  Search OpenSubtitles\u2026");
         int positionAt = type == C.TRACK_TYPE_TEXT ? labels.size() : -1;
         if (positionAt >= 0) labels.add("Aa  Size, position, timing  (" + Subs.sizeLabel() + " \u00B7 " + Subs.offsetLabel() + " \u00B7 " + Subs.delayLabel() + ")");
-        new AlertDialog.Builder(this).setTitle(name).setItems(labels.toArray(new String[0]), (d, i) -> {
+        new LocalizedDialogBuilder(this).setTitle(name).setItems(labels.toArray(new String[0]), (d, i) -> {
             if (i == searchAt) { searchSubs(); return; }
             if (i == positionAt) { subtitleStyle(); return; }
             androidx.media3.common.TrackSelectionParameters.Builder b = player.getTrackSelectionParameters().buildUpon().clearOverridesOfType(type);
@@ -1079,11 +1117,11 @@ public class PlayerActivity extends Activity {
     void pickSubLanguage(Map<String, List<Subs.Sub>> langs) {
         List<String> codes = new ArrayList<>(langs.keySet()), labels = new ArrayList<>();
         for (String c : codes) labels.add(Subs.language(c) + "  \u00B7  " + langs.get(c).size());
-        new AlertDialog.Builder(this).setTitle("Subtitle language").setItems(labels.toArray(new String[0]), (d, i) -> {
+        new LocalizedDialogBuilder(this).setTitle("Subtitle language").setItems(labels.toArray(new String[0]), (d, i) -> {
             List<Subs.Sub> files = langs.get(codes.get(i)).subList(0, Math.min(40, langs.get(codes.get(i)).size()));
             List<String> names = new ArrayList<>();
             for (Subs.Sub f : files) names.add(f.release);
-            new AlertDialog.Builder(this).setTitle(Subs.language(codes.get(i)) + ": pick a release that matches your video")
+            new LocalizedDialogBuilder(this).setTitle(Subs.language(codes.get(i)) + ": pick a release that matches your video")
                 .setItems(names.toArray(new String[0]), (d2, j) -> addSubtitle(files.get(j))).show();
         }).show();
     }
@@ -1105,6 +1143,7 @@ public class PlayerActivity extends Activity {
 
     @Override protected void onStop() {
         super.onStop();
+        endHoldSpeed();
         if (player == null) return;
         player.pause();
         long dur = player.getDuration(), pos = player.getCurrentPosition();

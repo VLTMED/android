@@ -50,8 +50,8 @@ public class IptvActivity extends Home {
         count.setPadding(0, dp(2), 0, dp(8));
         root.addView(count);
 
-        EditText filter = new EditText(this);
-        filter.setHint("Filter by name");
+        EditText filter = new LocalizedEditText(this);
+        filter.setHint(Localization.translate(this, "Filter by name"));
         filter.setHintTextColor(MUTED);
         filter.setTextColor(TEXT);
         filter.setTextSize(sp(16, 15));

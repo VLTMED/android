@@ -240,7 +240,7 @@ public class WebActivity extends Activity {
         progress = new ProgressBar(this, null, android.R.attr.progressBarStyleHorizontal);
         progress.setProgressTintList(ColorStateList.valueOf(Home.ACCENT));
         root.addView(progress, new FrameLayout.LayoutParams(-1, Home.dp(this, 4), Gravity.TOP));
-        status = new TextView(this);
+        status = new LocalizedTextView(this);
         status.setTextColor(Color.WHITE);
         status.setTextSize(18);
         status.setGravity(Gravity.CENTER);
@@ -257,7 +257,7 @@ public class WebActivity extends Activity {
         });
         if (pointer != null && pointer.on && !App.prefs.getBoolean("pointerHint", false)) {
             App.prefs.edit().putBoolean("pointerHint", true).apply();
-            Toast.makeText(this, "Cursor mode: arrows move it, OK taps. Hold OK 5 s to switch to focus mode.", Toast.LENGTH_LONG).show();
+            LocalizedToast.makeText(this, "Cursor mode: arrows move it, OK taps. Hold OK 5 s to switch to focus mode.", Toast.LENGTH_LONG).show();
         }
 
         WebSettings s = web.getSettings();
@@ -456,7 +456,7 @@ public class WebActivity extends Activity {
         if (saved != null && h.useHttpAuthUsernamePassword()) { h.proceed(saved[0], saved[1]); return; }
         EditText user = field(this, "Username", InputType.TYPE_CLASS_TEXT);
         EditText pass = field(this, "Password", InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-        new AlertDialog.Builder(this).setTitle("Sign in to " + host).setView(box(this, user, pass))
+        new LocalizedDialogBuilder(this).setTitle("Sign in to " + host).setView(box(this, user, pass))
             .setPositiveButton("Sign in", (d, w) -> {
                 String u = user.getText().toString(), p = pass.getText().toString();
                 db.setHttpAuthUsernamePassword(host, realm, u, p);
@@ -652,7 +652,7 @@ public class WebActivity extends Activity {
         acts.add(() -> { App.prefs.edit().putBoolean("cleanvideo", !clean).apply(); toast(clean ? "Smooth video off" : "Smooth video on"); });
         items.add("Back to home");
         acts.add(this::finish);
-        new AlertDialog.Builder(this).setTitle(site)
+        new LocalizedDialogBuilder(this).setTitle(site)
             .setItems(items.toArray(new String[0]), (d, i) -> acts.get(i).run()).show();
         return true;
     }
@@ -753,10 +753,10 @@ public class WebActivity extends Activity {
     }
 
     static EditText field(Context c, String hint, int type) {
-        EditText e = new EditText(c);
-        e.setHint(hint);
+        EditText e = new LocalizedEditText(c);
+        e.setHint(Localization.translate(c, hint));
         e.setInputType(type);
-        e.setTypeface(Typeface.DEFAULT);
+        e.setTypeface(Fonts.ui(c));
         return e;
     }
 
@@ -770,6 +770,6 @@ public class WebActivity extends Activity {
     }
 
     void toast(String s) {
-        Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
+        LocalizedToast.makeText(this, s, Toast.LENGTH_SHORT).show();
     }
 }

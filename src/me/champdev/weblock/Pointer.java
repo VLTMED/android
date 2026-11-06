@@ -64,7 +64,7 @@ final class Pointer {
         if (on) dot.setVisibility(View.VISIBLE);
         ring = new Ring(a, density, this::switchMode);
         ring.setVisibility(View.GONE);
-        badge = new TextView(a);
+        badge = new LocalizedTextView(a);
         badge.setTextColor(Color.WHITE);
         badge.setTextSize(16);
         badge.setPadding(dp(18), dp(10), dp(18), dp(10));

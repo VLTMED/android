@@ -235,12 +235,12 @@ public class Home extends Activity {
         TextView t = chip(click);
         iconize(t, R.drawable.ic_mic, TEXT);
         t.setCompoundDrawablePadding(0);
-        t.setContentDescription("Voice search");
+        t.setContentDescription(Localization.translate(this, "Voice search"));
         return t;
     }
 
     void confirm(String title, String message, String yes, Runnable then) {
-        new AlertDialog.Builder(this).setTitle(title).setMessage(message)
+        new LocalizedDialogBuilder(this).setTitle(title).setMessage(message)
             .setPositiveButton(yes, (d, w) -> then.run())
             .setNegativeButton("Cancel", null)
             .show();
@@ -589,7 +589,7 @@ public class Home extends Activity {
             if (row.equals("working")) { items.add("Remove from Working"); actions.add(() -> Iptv.forgetWorking(c.url)); }
             items.add(Iptv.isFavorite(c) ? "\u2606  Remove from favorites" : "\u2605  Add to favorites");
             actions.add(() -> Iptv.toggleFavorite(c));
-            new AlertDialog.Builder(this).setTitle(c.name).setItems(items.toArray(new String[0]), (d, i) -> { actions.get(i).run(); build(); }).show();
+            new LocalizedDialogBuilder(this).setTitle(c.name).setItems(items.toArray(new String[0]), (d, i) -> { actions.get(i).run(); build(); }).show();
             return true;
         });
         return t;
@@ -617,11 +617,11 @@ public class Home extends Activity {
             info.setOrientation(LinearLayout.VERTICAL);
             info.setGravity(Gravity.CENTER_HORIZONTAL);
             info.setPadding(dp(8), 0, dp(8), dp(8));
-            name = text("", sp(14, 12), TEXT, true);
+            name = textRaw("", sp(14, 12), TEXT, true);
             name.setMaxLines(2);
             name.setEllipsize(TextUtils.TruncateAt.END);
             name.setGravity(Gravity.CENTER);
-            sub = text("", sp(11, 10), MUTED, false);
+            sub = textRaw("", sp(11, 10), MUTED, false);
             sub.setSingleLine();
             sub.setEllipsize(TextUtils.TruncateAt.END);
             info.addView(name);
@@ -679,7 +679,7 @@ public class Home extends Activity {
     void extrasDialog() {
         EditText in = WebActivity.field(this, "https://example.com/sources.txt", InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_URI);
         in.setText(Iptv.extrasUrl());
-        new AlertDialog.Builder(this).setTitle("Extra source list").setMessage("Link to a text file, one \"label|url\" line per playlist. Empty means none.").setView(WebActivity.box(this, in))
+        new LocalizedDialogBuilder(this).setTitle("Extra source list").setMessage("Link to a text file, one \"label|url\" line per playlist. Empty means none.").setView(WebActivity.box(this, in))
             .setPositiveButton("Save", (d, w) -> {
                 App.prefs.edit().putString("extrasUrl", in.getText().toString().trim()).apply();
                 toast("Fetching\u2026");
@@ -703,7 +703,7 @@ public class Home extends Activity {
     void addPlaylistDialog() {
         EditText in = WebActivity.field(this, "https://example.com/playlist.m3u", InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_URI);
         EditText name = WebActivity.field(this, "Name, e.g. Sports (shown as its row)", InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_WORDS);
-        new AlertDialog.Builder(this).setTitle("Add a playlist or stream").setMessage("A playlist (M3U) or a single stream link (.m3u8)").setView(WebActivity.box(this, in, name))
+        new LocalizedDialogBuilder(this).setTitle("Add a playlist or stream").setMessage("A playlist (M3U) or a single stream link (.m3u8)").setView(WebActivity.box(this, in, name))
             .setPositiveButton("Add", (d, w) -> {
                 String url = in.getText().toString().trim(), label = name.getText().toString();
                 if (url.isEmpty()) return;
@@ -728,7 +728,7 @@ public class Home extends Activity {
         EditText server = WebActivity.field(this, "Server, e.g. http://example.com:8080", InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_URI);
         EditText user = WebActivity.field(this, "Username", InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
         EditText pass = WebActivity.field(this, "Password", InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-        new AlertDialog.Builder(this).setTitle("Xtream login").setMessage("The server, username and password from your IPTV provider")
+        new LocalizedDialogBuilder(this).setTitle("Xtream login").setMessage("The server, username and password from your IPTV provider")
             .setView(WebActivity.box(this, name, server, user, pass))
             .setPositiveButton("Add", (d, w) -> {
                 if (server.getText().toString().trim().isEmpty() || user.getText().toString().trim().isEmpty()) return;
@@ -788,19 +788,19 @@ public class Home extends Activity {
     void settingsTab() {
         col.addView(tabHeader("Settings"));
         col.addView(heading("Connection"));
-        warpValue = new TextView(this);
+        warpValue = new LocalizedTextView(this);
         col.addView(settingRow("WARP", "Cloudflare tunnel, only inside this app. Gets past ISP and DNS blocks.", warpValue, v -> {
             boolean on = Warp.state == Warp.State.ON || Warp.state == Warp.State.CONNECTING;
             App.prefs.edit().putBoolean("warp", !on).apply();
             if (on) Warp.stop(); else Warp.start();
         }));
-        adValue = new TextView(this);
+        adValue = new LocalizedTextView(this);
         col.addView(settingRow("Ad block", "Blocks ad domains, pop-ups and redirects on every site.", adValue, v -> {
             App.prefs.edit().putBoolean("adblock", !AdBlock.enabled()).apply();
             updateChips();
         }));
         if (App.tv) {
-            TextView cursor = new TextView(this);
+            TextView cursor = new LocalizedTextView(this);
             col.addView(settingRow("Cursor on sites", "Arrow keys move a round cursor. Hold OK 5 s on a site to switch.", cursor, v -> {
                 App.prefs.edit().putBoolean("pointer", !App.prefs.getBoolean("pointer", true)).apply();
                 build();
@@ -825,7 +825,7 @@ public class Home extends Activity {
 
         col.addView(heading("IPTV"));
         if (Iptv.adultAvailable()) {
-            TextView adultValue = new TextView(this);
+            TextView adultValue = new LocalizedTextView(this);
             col.addView(settingRow("Adult channels", "Shows the Mature category on the IPTV tab. Off by default.", adultValue, v -> {
                 App.prefs.edit().putBoolean("adult", !Iptv.adultOn()).apply();
                 build();
@@ -833,7 +833,7 @@ public class Home extends Activity {
             adultValue.setText(Iptv.adultOn() ? "On" : "Off");
             adultValue.setTextColor(Iptv.adultOn() ? GREEN : MUTED);
         }
-        TextView extrasValue = new TextView(this);
+        TextView extrasValue = new LocalizedTextView(this);
         col.addView(settingRow("Extra source list", "More playlists and title links, from a text file you choose (it starts on the project's own list).", extrasValue, v -> extrasDialog()));
         extrasValue.setText(Iptv.extrasUrl().isEmpty() ? "None" : Iptv.extrasUrl().equals(Iptv.DEFAULT_EXTRAS) ? "Default" : "Custom");
         extrasValue.setTextColor(Iptv.extrasUrl().isEmpty() ? MUTED : GREEN);
@@ -844,7 +844,7 @@ public class Home extends Activity {
             col.addView(settingRow(name, n + (n == 1 ? " channel" : " channels") + ". Press to remove.", null, v ->
                 confirm("Remove this playlist?", name, "Remove", () -> { Iptv.removePlaylist(url); build(); toast("Playlist removed"); })));
         }
-        TextView deadValue = new TextView(this);
+        TextView deadValue = new LocalizedTextView(this);
         col.addView(settingRow("Hide offline channels", "Channels that failed a check or would not play stay out of the lists.", deadValue, v -> {
             App.prefs.edit().putBoolean("hideDead", !Iptv.hideDead()).apply();
             build();
@@ -866,12 +866,12 @@ public class Home extends Activity {
         }));
 
         col.addView(heading("Player"));
-        TextView subValue = new TextView(this);
+        TextView subValue = new LocalizedTextView(this);
         col.addView(settingRow("Subtitles", "Size and position of subtitles in the player. Timing is on the player's Subtitles button.", subValue, v ->
             Subs.panel(this, false, () -> subValue.setText(Subs.sizeLabel() + " \u00B7 " + Subs.offsetLabel()), this::build)));
         subValue.setText(Subs.sizeLabel() + " \u00B7 " + Subs.offsetLabel());
         subValue.setTextColor(Subs.size() == 100 && Subs.offset() == 0 ? MUTED : GREEN);
-        TextView simklValue = new TextView(this);
+        TextView simklValue = new LocalizedTextView(this);
         col.addView(settingRow("Simkl", "Marks movies and episodes you watch in the player as watched on Simkl, a free tracker. Titles opened from Movies, TV or Anime.", simklValue, v -> {
             if (Simkl.signedIn()) confirm("Disconnect Simkl?", "FMHYPlay stops telling Simkl what you watch. Your Simkl history stays.", "Disconnect", () -> { Simkl.signOut(); build(); });
             else simklDialog();
@@ -881,11 +881,11 @@ public class Home extends Activity {
 
         col.addView(heading("Updates"));
         String newer = Update.latest();
-        TextView updValue = new TextView(this);
+        TextView updValue = new LocalizedTextView(this);
         col.addView(settingRow("Check for updates", "FMHYPlay " + Update.installed() + ". Asks GitHub for a newer release and installs it on your say.", updValue, v -> checkUpdate(updValue)));
         updValue.setText(newer.isEmpty() ? "Up to date" : newer + " available");
         updValue.setTextColor(newer.isEmpty() ? MUTED : GREEN);
-        TextView autoValue = new TextView(this);
+        TextView autoValue = new LocalizedTextView(this);
         col.addView(settingRow("Check at app start", "Looks for an update once every 12 hours.", autoValue, v -> {
             App.prefs.edit().putBoolean("updateCheck", !Update.auto()).apply();
             build();
@@ -916,7 +916,7 @@ public class Home extends Activity {
         TextView steps = text("Getting a code\u2026", sp(17, 15), TEXT, false), code = text("", sp(40, 32), TEXT, true);
         code.setLetterSpacing(0.15f);
         code.setPadding(0, dp(14), 0, dp(6));
-        AlertDialog d = new AlertDialog.Builder(this).setTitle("Connect Simkl").setView(WebActivity.box(this, steps, code)).setNegativeButton("Cancel", null).create();
+        AlertDialog d = new LocalizedDialogBuilder(this).setTitle("Connect Simkl").setView(WebActivity.box(this, steps, code)).setNegativeButton("Cancel", null).create();
         boolean[] open = {true};
         d.setOnDismissListener(x -> open[0] = false);
         d.show();
@@ -982,7 +982,7 @@ public class Home extends Activity {
         row.addView(left, new LinearLayout.LayoutParams(0, -2, 1));
         if (value != null) {
             value.setTextSize(sp(16, 14));
-            value.setTypeface(Typeface.create("sans-serif-medium", Typeface.NORMAL));
+            value.setTypeface(Fonts.ui(this));
             value.setPadding(dp(12), 0, 0, 0);
             row.addView(value);
         }
@@ -1013,12 +1013,12 @@ public class Home extends Activity {
         LinearLayout info = new LinearLayout(this);
         info.setOrientation(LinearLayout.VERTICAL);
         info.setPadding(u(9, 7), 0, u(9, 7), u(8, 6));
-        TextView name = text(t.name, sp(14, 12), Color.WHITE, true);
+        TextView name = textRaw(t.name, sp(14, 12), Color.WHITE, true);
         name.setMaxLines(2);
         name.setEllipsize(TextUtils.TruncateAt.END);
         info.addView(name);
         String meta = (t.year.isEmpty() ? "" : t.year) + (t.rating.isEmpty() ? "" : (t.year.isEmpty() ? "" : "  ·  ") + "★ " + t.rating);
-        if (!meta.isEmpty()) info.addView(text(meta, sp(12, 10), 0xFFD8D0E2, false));
+        if (!meta.isEmpty()) info.addView(textRaw(meta, sp(12, 10), 0xFFD8D0E2, false));
         card.addView(info, new FrameLayout.LayoutParams(-1, -2, Gravity.BOTTOM));
 
         card.setBackground(rounded(colorFor(t.name), dp(12)));
@@ -1124,7 +1124,7 @@ public class Home extends Activity {
         ImageView b = new ImageView(this);
         b.setImageResource(res);
         b.setColorFilter(MUTED);
-        b.setContentDescription(label);
+        b.setContentDescription(Localization.translate(this, label));
         int pad = u(10, 8);
         b.setPadding(pad, pad, pad, pad);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(u(44, 36), u(44, 36));
@@ -1234,12 +1234,12 @@ public class Home extends Activity {
         LinearLayout info = new LinearLayout(this);
         info.setOrientation(LinearLayout.VERTICAL);
         info.setPadding(u(12, 9), 0, u(12, 9), u(10, 7));
-        TextView title = text(e.title, sp(16, 14), Color.WHITE, true);
+        TextView title = textRaw(e.title, sp(16, 14), Color.WHITE, true);
         title.setMaxLines(2);
         title.setEllipsize(TextUtils.TruncateAt.END);
         info.addView(title);
         String ago = DateUtils.getRelativeTimeSpanString(e.time, System.currentTimeMillis(), DateUtils.MINUTE_IN_MILLIS).toString();
-        info.addView(text((e.episode.isEmpty() ? "" : e.episode + "  ·  ") + e.site + "  ·  " + ago, 12, 0xFFD8D0E2, false));
+        info.addView(textRaw((e.episode.isEmpty() ? "" : e.episode + "  ·  ") + e.site + "  ·  " + ago, 12, 0xFFD8D0E2, false));
         card.addView(info, new FrameLayout.LayoutParams(-1, -2, Gravity.BOTTOM));
 
         card.setBackground(rounded(colorFor(e.site), dp(14)));
@@ -1247,7 +1247,7 @@ public class Home extends Activity {
         focusable(card, dp(14));
         card.setOnClickListener(v -> startActivity(WebActivity.open(this, e.site, e.siteUrl, e.url)));
         card.setOnLongClickListener(v -> {
-            new AlertDialog.Builder(this).setTitle(e.title)
+            new LocalizedDialogBuilder(this).setTitle(e.title)
                 .setItems(new String[]{"Open " + e.site + " home", "Remove from Continue watching"}, (d, i) -> {
                     if (i == 0) startActivity(WebActivity.open(this, e.site, e.siteUrl, e.siteUrl));
                     else { History.remove(e); build(); }
@@ -1277,7 +1277,7 @@ public class Home extends Activity {
         tile.addView(icon, new FrameLayout.LayoutParams(-1, -1));
         loadImage(icon, "https://www.google.com/s2/favicons?domain=" + host + "&sz=64", letter);
         top.addView(tile, new LinearLayout.LayoutParams(u(26, 22), u(26, 22)));
-        TextView name = text(s.name, sp(17, 15), TEXT, true);
+        TextView name = textRaw(s.name, sp(17, 15), TEXT, true);
         if (markFavorite && Sites.isFavorite(s.url)) {
             android.text.SpannableString star = new android.text.SpannableString("★  " + s.name);
             star.setSpan(new android.text.style.ForegroundColorSpan(ACCENT), 0, 1, 0);
@@ -1288,7 +1288,7 @@ public class Home extends Activity {
         name.setPadding(u(10, 8), 0, 0, 0);
         top.addView(name);
         card.addView(top);
-        TextView tags = text(s.tags.isEmpty() ? host : s.tags, sp(12, 11), MUTED, false);
+        TextView tags = textRaw(s.tags.isEmpty() ? host : s.tags, sp(12, 11), MUTED, false);
         tags.setSingleLine();
         tags.setEllipsize(TextUtils.TruncateAt.END);
         tags.setPadding(0, u(6, 2), 0, 0);
@@ -1307,7 +1307,7 @@ public class Home extends Activity {
                 items.add("Open mirror: " + Uri.parse(m).getHost());
                 actions.add(() -> startActivity(WebActivity.open(this, s.name, m, m)));
             }
-            new AlertDialog.Builder(this).setTitle(s.name)
+            new LocalizedDialogBuilder(this).setTitle(s.name)
                 .setItems(items.toArray(new String[0]), (d, i) -> actions.get(i).run()).show();
             return true;
         });
@@ -1357,7 +1357,7 @@ public class Home extends Activity {
         focusable(card, dp(14));
         card.setOnClickListener(v -> {
             EditText in = WebActivity.field(this, "https://example.com", InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_URI);
-            new AlertDialog.Builder(this).setTitle("Add a site").setView(WebActivity.box(this, in))
+            new LocalizedDialogBuilder(this).setTitle("Add a site").setView(WebActivity.box(this, in))
                 .setPositiveButton("Add", (d, w) -> {
                     if (in.getText().toString().trim().isEmpty()) return;
                     Sites.addCustom(in.getText().toString());
@@ -1422,11 +1422,20 @@ public class Home extends Activity {
     }
 
     TextView text(String s, float sp, int color, boolean bold) {
-        TextView t = new TextView(this);
+        TextView t = new LocalizedTextView(this);
         t.setText(s);
         t.setTextSize(sp);
         t.setTextColor(color);
-        if (bold) t.setTypeface(Typeface.create("sans-serif-medium", Typeface.NORMAL));
+        if (bold) t.setTypeface(Fonts.ui(this));
+        return t;
+    }
+
+    TextView textRaw(String s, float sp, int color, boolean bold) {
+        TextView t = new PlainTextView(this);
+        t.setText(s);
+        t.setTextSize(sp);
+        t.setTextColor(color);
+        if (bold) t.setTypeface(Fonts.ui(this));
         return t;
     }
 
@@ -1483,6 +1492,6 @@ public class Home extends Activity {
     }
 
     void toast(String s) {
-        Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
+        LocalizedToast.makeText(this, s, Toast.LENGTH_SHORT).show();
     }
 }
